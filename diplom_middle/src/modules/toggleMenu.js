@@ -4,7 +4,8 @@ const toggleMenu = () => {
         menuSelector = document.querySelector('.clubs-list').firstElementChild;
 
     let count = 0;
-    const handlerMenu = () => {
+    const handlerMenu = event => {
+        let target = event.target.tagName;
         if (menu.style.display !== 'block') {
             let flyInterval;
             const flyAnimate = function() {
@@ -19,7 +20,7 @@ const toggleMenu = () => {
 
             menu.style.display = 'block';
             menuSelector.textContent = 'Закрыть меню';
-        } else if (menu.style.display === 'block') {
+        } else if (menu.style.display === 'block' && target === 'A' || target === 'P') {
             let flyInterval;
             const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
@@ -37,9 +38,8 @@ const toggleMenu = () => {
 
     btnMenu.addEventListener('click', handlerMenu);
     menu.addEventListener('click', event => {
-        const target = event.target;
-
-        if (target.closest('club-select')) {
+        const target = event.target.tagName;
+        if (target === 'A') {
             handlerMenu();
         }
     });
