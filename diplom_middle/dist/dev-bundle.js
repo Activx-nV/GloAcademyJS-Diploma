@@ -31,6 +31,28 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 
 /***/ }),
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n //function expressions\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://LandingPage-Diploma/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/toggleMenu.js":
+/*!***********************************!*\
+  !*** ./src/modules/toggleMenu.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar toggleMenu = function toggleMenu() {\n  var btnMenu = document.querySelector('.club-select'),\n      menu = document.getElementById('club-list'),\n      menuSelector = document.querySelector('.clubs-list').firstElementChild;\n  var count = 0;\n\n  var handlerMenu = function handlerMenu() {\n    if (menu.style.display !== 'block') {\n      var flyInterval;\n\n      var flyAnimate = function flyAnimate() {\n        flyInterval = requestAnimationFrame(flyAnimate);\n        count += 0.01;\n        menu.style.opacity = count;\n\n        if (count > 1) {\n          cancelAnimationFrame(flyInterval);\n        }\n      };\n\n      flyInterval = requestAnimationFrame(flyAnimate);\n      menu.style.display = 'block';\n      menuSelector.textContent = 'Закрыть меню';\n    } else if (menu.style.display === 'block') {\n      var _flyInterval;\n\n      var _flyAnimate = function _flyAnimate() {\n        _flyInterval = requestAnimationFrame(_flyAnimate);\n        count -= 0.01;\n        menu.style.opacity = count;\n\n        if (count < 0.2) {\n          menu.style.display = 'none';\n          cancelAnimationFrame(_flyInterval);\n        }\n      };\n\n      _flyInterval = requestAnimationFrame(_flyAnimate);\n      menuSelector.textContent = 'Выбрать клуб';\n    }\n  };\n\n  btnMenu.addEventListener('click', handlerMenu);\n  menu.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('club-select')) {\n      handlerMenu();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleMenu);\n\n//# sourceURL=webpack://LandingPage-Diploma/./src/modules/toggleMenu.js?");
+
+/***/ }),
+
 /***/ "./node_modules/events/events.js":
 /*!***************************************!*\
   !*** ./node_modules/events/events.js ***!
@@ -394,6 +416,18 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	__webpack_require__.i = [];
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/get javascript update chunk filename */
 /******/ 	(() => {
 /******/ 		// This function allow to reference all chunks
@@ -410,7 +444,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "3490bc9420fbbb84e8e6"
+/******/ 		__webpack_require__.h = () => "f0a5e3c71803ab31f735"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -473,6 +507,17 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -1357,6 +1402,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module
+/******/ 	__webpack_require__("./src/index.js");
 /******/ 	__webpack_require__("./node_modules/webpack-dev-server/client/index.js?http://localhost:8080");
 /******/ 	__webpack_require__("./node_modules/webpack/hot/dev-server.js");
 /******/ })()
