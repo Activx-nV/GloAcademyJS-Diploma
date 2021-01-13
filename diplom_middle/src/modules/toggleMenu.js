@@ -9,7 +9,7 @@ const toggleMenu = () => {
             let flyInterval;
             const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
-                count += 0.01;
+                count += 0.02;
                 menu.style.opacity = count;
                 if (count > 1) {
                     cancelAnimationFrame(flyInterval);
@@ -23,7 +23,7 @@ const toggleMenu = () => {
             let flyInterval;
             const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
-                count -= 0.01;
+                count -= 0.02;
                 menu.style.opacity = count;
                 if (count < 0.2) {
                     menu.style.display = 'none';
@@ -31,7 +31,6 @@ const toggleMenu = () => {
                 }
             };
             flyInterval = requestAnimationFrame(flyAnimate);
-
             menuSelector.textContent = 'Выбрать клуб';
         }
     };

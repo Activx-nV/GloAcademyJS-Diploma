@@ -13,6 +13,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
+    <div class="fixed-gift">
+        <img src=images/gift.png alt>
+    </div>
 <header class="header-main">
     <div class="head">
         <div class="wrapper">
@@ -34,7 +37,8 @@
                 <div class="right">
                     <div class="free-visit">
                         <img src="images/head-icon.png" alt="">
-                        <p><a href="#" class="open-popup" data-popup="#free_visit_form">Записаться на <br>бесплатный
+                        <p><a href="#" class="open-popup popup-btn" data-popup="#free_visit_form">Записаться на
+                                <br>бесплатный
                             визит</a></p>
                     </div>
                     <div class="call">
@@ -42,7 +46,7 @@
                             <span>Звоните круглосуточно!</span>
                             <p>+7 (800) 555-64-47</p>
                         </div>
-                        <button class="btn callback-btn" data-popup="#callback_form">Перезвоните мне</button>
+                        <button class="btn callback-btn popup-btn" data-popup="#callback_form">Перезвоните мне</button>
                     </div>
                 </div>
             </div>
@@ -473,7 +477,8 @@
                             <p class="tel">+7 (800) 555-64-47</p>
                             <p class="input-text"><input type="tel" name="phone" id="callback_footer_form-phone"
                                                          required="" placeholder="Ваш номер телефона..."></p>
-                            <button class="btn callback-btn" type="submit" data-popup="#callback_form">Перезвоните мне
+                            <button class="btn callback-btn popup-btn" type="submit"
+                                data-popup="#callback_form">Перезвоните мне
                             </button>
                         </div>
                     </div>
@@ -570,6 +575,20 @@
         </div>
     </div>
 </div>
+
+<div class="popup" id="gift">
+    <div class="overlay">
+    </div>
+    <div class="form-wrapper">
+        <div class="close-form">
+            <img src="images/close-icon.png" alt="close" class="close_icon">
+        </div>
+        <div class="form-content">
+            <h4>У нас для вас есть подарок!</h4>
+            <p>Введите промо-код ТЕЛО2019 и получите скидку 30%</p>
+            <button class="btn close-btn">OK</button>
+        </div>
+    </div>
 
 <script src="./dist/dev-bundle.js"></script>
 </body>
