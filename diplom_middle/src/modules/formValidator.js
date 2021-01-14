@@ -17,7 +17,7 @@ const formValidator = () => {
         dom.forEach(item => {
             item.addEventListener('input', () => {
                 if (item.value !== '') {
-                    if (!item.value.match(/^(\+?[0-9]{8,14})$/g)) {
+                    if (!item.value.match(/^(\+?[0-9]{1,14})$/g)) {
                         //item.value = item.value.substr(0, item.value.length - 1);
                         formBtns.forEach(btns => {
                             btns.setAttribute('disabled', true);
@@ -48,7 +48,11 @@ const formValidator = () => {
                 //     item.value = item.value.substr(0, item.value.length - 1);
                 // }
 
-                item.value = item.value.replace(/[^А-Яа-яЁё ]/g, "");
+                item.value = item.value.replace(/^([^А-Яа-яЁё ])$/g, "");
+                if (item.value.length === 50) {
+                    item.value = item.value.substr(0, item.value.length - 1);
+                }
+                //item.value = item.value.replace(/^[А-Яа-яЁё ]{4,6}$/g, "");
             });
         });
     };
