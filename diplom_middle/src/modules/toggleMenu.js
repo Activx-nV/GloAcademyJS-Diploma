@@ -39,7 +39,7 @@ const toggleMenu = () => {
     btnMenu.addEventListener('click', handlerMenu);
     document.body.addEventListener('click', event => {
         let target = event.target.tagName;
-        if (menu.style.display === 'block' && target !== 'A' && target !== 'P' && target !== 'LI' && target !== 'UL') {
+        if (menu.style.display === 'block' && target !== 'A' && target !== 'P' && target !== 'LI' && target !== 'UL' && event.target.className !== 'slide-text') {
             let flyInterval;
             const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
