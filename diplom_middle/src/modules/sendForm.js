@@ -15,6 +15,7 @@ const sendForm = () => {
     // const popUpForm = document.getElementById('form3');
     //const formInputs = document.querySelector('.client-input');
     const checkbox = document.querySelectorAll('.checkbox');
+    const checkbox1 = document.querySelector('#check1');
     const popUp = document.querySelector('.popup');
     const popUpThanks = document.querySelector('#thanks');
     const bannerForm = document.getElementById('banner-form');
@@ -24,18 +25,46 @@ const sendForm = () => {
     const allPageInputs = document.querySelectorAll('input');
     const formContent = document.querySelector('.form-content');
     const formBtn = document.querySelector('.btn-send');
+    const bannerBtn = document.querySelector('.btn');
+    const warningMessage = document.querySelector('.warning');
     statusMessage.style.cssText = 'font-size: 2rem;';
 
     formContent.addEventListener('click', event => {
-        console.log(event.target);
+        console.log(formContent);
         if (event.target.id === 'check') {
             formBtn.innerText = 'Записаться';
             formHandler(form1);
             formHandler(form2);
-            formHandler(bannerForm);
         } else if (event.target.className === "btn btn-send") {
             formBtn.style.fontSize = "11px";
-            formBtn.innerText = 'подтвердите согласие перед отправкой';
+            formBtn.innerText = 'подтвердите согласие';
+            return;
+        }
+    });
+
+    bannerForm.addEventListener('click', event => {
+        if (event.target.id === 'check1') {
+            formHandler(bannerForm);
+            warningMessage.textContent = "";
+        } else if (event.target.className === "btn" && !checkbox1.checked) {
+            //let div = document.createElement('div');
+            //div.style.fontSize = '20px';
+            //div.style.color = 'red';
+            //div.append('подтвердите соглашение на обработку данных');
+            //bannerBtn.style.fontSize = "10px";
+            //bannerBtn.innerText = 'подтвердите согласие';
+            //bannerBtn.setAttribute('disabled', true);
+            // if (bannerForm.lastElementChild.tagName === 'DIV') {
+            //     console.log('works');
+            //     bannerForm.lastElementChild.remove();
+            // }
+            //bannerForm.append(div);
+            warningMessage.textContent = 'подтвердите обработку персональных данных';
+            // setTimeout(() => {
+            //     //checkbox1.checked = false;
+            //     //bannerForm.lastElementChild.remove();
+            //     //bannerBtn.removeAttribute('disabled', true);
+            // }, 1500);
             return;
         }
     });
@@ -62,7 +91,7 @@ const sendForm = () => {
                 statusMessage.textContent = successMessage;
                 allPageInputs.forEach(item => {
                     item.value = '';
-                }); //mozho vernyt vse na mesto posle vyhoda
+                });
                 popUp.style.display = 'none';
                 if (event.target === bannerForm) {
                     event.target.children[3].innerText = 'Записаться';
@@ -70,6 +99,9 @@ const sendForm = () => {
                     event.target.lastElementChild.innerText = 'Записаться';
                 }
                 popUpThanks.style.display = 'block';
+                setTimeout(() => {
+                    popUpThanks.style.display = 'none';
+                }, 3000);
                 checkbox.forEach(elem => {
                     elem.checked = false;
                 });
