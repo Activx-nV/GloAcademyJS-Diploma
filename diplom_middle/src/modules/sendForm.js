@@ -80,6 +80,7 @@ const sendForm = () => {
     formHandler(form1);
     formHandler(form2);
     formHandler(bannerForm);
+
 };
 
 export default sendForm;
