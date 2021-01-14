@@ -69,10 +69,18 @@ const sendForm = () => {
                 });
             }).catch(error => {
                 //statusMessage.textContent = errorMessage;
-                event.target.lastElementChild.innerText = `${errorMessage}`;
-                setTimeout(() => {
-                    event.target.lastElementChild.innerText = `Записаться`;
-                }, 2500);
+                if (event.target === bannerForm) {
+                    event.target.children[3].innerText = errorMessage;
+                    setTimeout(() => {
+                        event.target.children[3].innerText = `Записаться`;
+                    }, 2500);
+                } else {
+                    event.target.lastElementChild.innerText = errorMessage;
+                    setTimeout(() => {
+                        event.target.lastElementChild.innerText = `Записаться`;
+                    }, 2500);
+                }
+
                 console.error(error);
             });
         });
