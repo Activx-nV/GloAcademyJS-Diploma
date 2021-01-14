@@ -37,6 +37,23 @@ const toggleMenu = () => {
     };
 
     btnMenu.addEventListener('click', handlerMenu);
+    document.body.addEventListener('click', event => {
+        let target = event.target.tagName;
+        if (menu.style.display === 'block' && target !== 'A' && target !== 'P' && target !== 'LI' && target !== 'UL') {
+            let flyInterval;
+            const flyAnimate = function() {
+                flyInterval = requestAnimationFrame(flyAnimate);
+                count -= 0.02;
+                menu.style.opacity = count;
+                if (count < 0.2) {
+                    menu.style.display = 'none';
+                    cancelAnimationFrame(flyInterval);
+                }
+            };
+            flyInterval = requestAnimationFrame(flyAnimate);
+            menuSelector.textContent = 'Выбрать клуб';
+        }
+    });
     menu.addEventListener('click', event => {
         const target = event.target.tagName;
         if (target === 'A') {
