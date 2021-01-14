@@ -6,23 +6,6 @@ const slider = () => {
     let currentSlide = 0,
         interval;
 
-    // const createDots = () => {
-    //     for (let i = 0; i < slide.length; i++) {
-    //         if (i === 0) {
-    //             const li = document.createElement('li');
-    //             li.classList.add('dot');
-    //             li.classList.add('dot-active');
-    //             dotParent.append(li);
-    //         } else {
-    //             const li = document.createElement('li');
-    //             li.classList.add('dot');
-    //             dotParent.append(li);
-    //         }
-    //     }
-    // };
-    // createDots();
-    // const dot = document.querySelectorAll('.dot');
-
     const prevSlide = (elem, index) => {
         elem[index].style.display = "none";
     };
