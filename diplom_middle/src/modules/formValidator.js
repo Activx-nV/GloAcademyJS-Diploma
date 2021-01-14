@@ -17,7 +17,7 @@ const formValidator = () => {
         dom.forEach(item => {
             item.addEventListener('input', () => {
                 if (item.value !== '') {
-                    if (!item.value.match(/^(\+?[0-9]*)$/g)) {
+                    if (!item.value.match(/^(\+?[0-9]{8,14})$/g)) {
                         //item.value = item.value.substr(0, item.value.length - 1);
                         formBtns.forEach(btns => {
                             btns.setAttribute('disabled', true);
@@ -33,7 +33,7 @@ const formValidator = () => {
         dom.forEach(item => {
             item.addEventListener('change', () => {
                 if (item.value !== '') {
-                    if (!item.value.match(/^(\+?[0-9]*)$/g)) {
+                    if (!item.value.match(/^(\+?[0-9]{8,14})$/g)) {
                         item.value = '';
                     }
                 }
