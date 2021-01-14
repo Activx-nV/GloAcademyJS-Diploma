@@ -22,7 +22,23 @@ const sendForm = () => {
     const form2 = document.getElementById('form2');
     const statusMessage = document.createElement('div');
     const allPageInputs = document.querySelectorAll('input');
+    const formContent = document.querySelector('.form-content');
+    const formBtn = document.querySelector('.btn-send');
     statusMessage.style.cssText = 'font-size: 2rem;';
+
+    formContent.addEventListener('click', event => {
+        console.log(event.target);
+        if (event.target.id === 'check') {
+            formBtn.innerText = 'Записаться';
+            formHandler(form1);
+            formHandler(form2);
+            formHandler(bannerForm);
+        } else if (event.target.className === "btn btn-send") {
+            formBtn.style.fontSize = "11px";
+            formBtn.innerText = 'подтвердите согласие перед отправкой';
+            return;
+        }
+    });
 
     function formHandler(form) {
         form.addEventListener('submit', event => {
