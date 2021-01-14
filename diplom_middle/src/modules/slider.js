@@ -1,3 +1,4 @@
+//MAIN SCREEN AUTOPLAY SLIDER
 const slider = () => {
     const slide = document.querySelectorAll('.main-slider .slide');
     // const slider = document.querySelector('.portfolio-content'),
