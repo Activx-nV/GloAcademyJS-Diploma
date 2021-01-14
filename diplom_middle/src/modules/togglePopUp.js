@@ -2,18 +2,21 @@ const togglePopUp = () => {
     let opacityIn = 0;
     let opacityOut = 1;
     const popUp = document.querySelector('.popup'),
+        formContent = document.querySelector('.form-content'),
         popupBtn = document.querySelectorAll('.popup-btn'),
         promoBtn = document.querySelector('.fixed-gift'),
         promoPopUp = document.getElementById('gift');
     const formInputs = document.querySelectorAll('.input-text input');
+    const checkbox = document.querySelectorAll('.checkbox');
 
     //fadeIn
     function fadeIn(speed, domStr) {
         let opacityInterval;
-        const opacityAnimate = function () {
+        const opacityAnimate = function() {
             opacityInterval = requestAnimationFrame(opacityAnimate);
             opacityIn += speed;
             if (opacityIn < 1.01) {
+                domStr.style.display = "block";
                 domStr.style.opacity = opacityIn;
             } else if (opacityIn >= 1) {
                 cancelAnimationFrame(opacityInterval);
@@ -25,7 +28,7 @@ const togglePopUp = () => {
     function fadeOff(speed, domStr) {
         let opacityInterval;
         opacityOut = 1;
-        const opacityAnimate = function () {
+        const opacityAnimate = function() {
             opacityInterval = requestAnimationFrame(opacityAnimate);
             opacityOut -= speed;
             if (opacityOut > 0.1) {
@@ -34,6 +37,9 @@ const togglePopUp = () => {
                 domStr.style.display = 'none';
                 formInputs.forEach(elem => {
                     elem.value = '';
+                });
+                checkbox.forEach(elem => {
+                    elem.checked = false;
                 });
                 cancelAnimationFrame(opacityInterval);
             }
@@ -47,7 +53,7 @@ const togglePopUp = () => {
             if (document.documentElement.clientWidth >= 768) {
                 opacityIn = 0;
                 popUp.style.display = 'block';
-                fadeIn(0.05, popUp);
+                fadeIn(0.05, formContent);
             } else {
                 popUp.style.display = 'block';
                 popUp.style.opacity = 1;
@@ -74,18 +80,21 @@ const togglePopUp = () => {
                 if (target.classList.contains('close_icon')) {
                     if (document.documentElement.clientWidth >= 768) {
                         fadeOff(0.01, promoPopUp);
+                        promoPopUp.style.display = 'none';
                     } else {
                         promoPopUp.style.display = 'none';
                     }
                 } else if (target.classList.contains('overlay')) {
                     if (document.documentElement.clientWidth >= 768) {
                         fadeOff(0.01, promoPopUp);
+                        promoPopUp.style.display = 'none';
                     } else {
                         promoPopUp.style.display = 'none';
                     }
                 } else if (target.classList.contains('close-btn')) {
                     if (document.documentElement.clientWidth >= 768) {
                         fadeOff(0.01, promoPopUp);
+                        promoPopUp.style.display = 'none';
                     } else {
                         promoPopUp.style.display = 'none';
                     }
@@ -98,22 +107,33 @@ const togglePopUp = () => {
             const target = event.target;
             if (target.classList.contains('close_icon')) {
                 if (document.documentElement.clientWidth >= 768) {
-                    fadeOff(0.01, popUp);
+                    fadeOff(0.01, formContent);
+                    popUp.style.display = 'none';
                 } else {
                     popUp.style.display = 'none';
                     formInputs.forEach(elem => {
                         elem.value = '';
+                    });
+                    checkbox.forEach(elem => {
+                        elem.checked = false;
                     });
                     popUp.style.display = 'none';
                 }
             } else if (target.classList.contains('overlay')) {
                 if (document.documentElement.clientWidth >= 768) {
-                    fadeOff(0.01, popUp);
+                    fadeOff(0.01, formContent);
+                    popUp.style.display = 'none';
+                    checkbox.forEach(elem => {
+                        elem.checked = false;
+                    });
                 } else {
                     formInputs.forEach(elem => {
                         elem.value = '';
                     });
                     popUp.style.display = 'none';
+                    checkbox.forEach(elem => {
+                        elem.checked = false;
+                    });
                 }
             }
         });
