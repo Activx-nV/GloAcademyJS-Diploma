@@ -84,10 +84,6 @@ const clubCardCalc = () => {
 
     promoCode.addEventListener('input', () => {
         if (promoCode.value === 'ТЕЛО2019') {
-            month1.checked = false;
-            month6.checked = false;
-            month9.checked = false;
-            month12.checked = false;
             priceHandler();
         }
     });

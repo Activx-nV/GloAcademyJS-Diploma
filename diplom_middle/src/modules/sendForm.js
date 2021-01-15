@@ -62,12 +62,17 @@ const sendForm = () => {
         if (event.target.id === 'card_check' && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
             warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
             cardOrderBtn.setAttribute('disabled', true);
-        } else if (month1.checked || month6.checked || month9.checked || month12.checked) {
+        } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
             if (!checkboxCardOrder.checked) {
                 warningCardMessage.textContent = 'подтвердите обработку персональных данных';
             }
+            if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+                warningCardMessage.textContent = '';
+            }
             cardOrderBtn.removeAttribute('disabled', true);
             if (event.target.id === 'card_check' && month1.checked || month6.checked || month9.checked || month12.checked) {
+                warningCardMessage.textContent = "";
+                cardOrderBtn.removeAttribute('disabled', true);
                 formHandler(formCard);
                 warningCardMessage.textContent = "";
             } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
@@ -79,7 +84,6 @@ const sendForm = () => {
 
     function formHandler(form) {
         form.addEventListener('submit', event => {
-            console.log(event.target);
             event.preventDefault();
             statusMessage.textContent = loadMessage;
             if (event.target === bannerForm) {
@@ -106,6 +110,8 @@ const sendForm = () => {
                 popUp.style.display = 'none';
                 if (event.target === bannerForm) {
                     event.target.children[3].innerText = 'Записаться';
+                } else if (event.target === formCard) {
+                    event.target.children[8].firstElementChild.textContent = 'Забронировать карту';
                 } else {
                     event.target.lastElementChild.innerText = 'Записаться';
                 }
@@ -141,7 +147,7 @@ const sendForm = () => {
                 } else {
                     event.target.lastElementChild.innerText = errorMessage;
                     setTimeout(() => {
-                        event.target.lastElementChild.innerText = `Записаться`;
+                        event.target.lastElementChild.textContent = `Записаться`;
                     }, 2500);
                 }
 
