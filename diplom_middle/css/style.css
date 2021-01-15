@@ -59,3 +59,132 @@ body ul {
         display: none;
     }
 }
+
+.warning {
+    color: red;
+    font-size: 18px;
+}
+
+.card-order-warning {
+    color: red;
+    font-size: 18px;
+}
+
+.far {
+    font-size: 270%;
+    color: #000000;
+}
+
+.arrows-gallery {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    margin-top: 3px;
+}
+
+.fa-arrow-alt-circle-left:hover {
+    color: cyan;
+    cursor: pointer;
+}
+
+.fa-arrow-alt-circle-right:hover {
+    color: cyan;
+    cursor: pointer;
+}
+
+
+.gallery-slide-active {
+    opacity: 1;
+    transition: 4s ease;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gallery-slide-active {
+    -webkit-animation: fade 1s;
+    /* Safari 4+ */
+    -moz-animation: fade 1s;
+    /* Fx 5+ */
+    -o-animation: fade 1s;
+    /* Opera 12+ */
+    animation: fade 1s;
+    /* IE 10+, Fx 29+ */
+}
+
+.portfolio-dots .dot {
+    position: relative;
+    top: 400px;
+    z-index: 99;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: solid white;;
+    display: inline-block;
+    -webkit-transition: background-color, -webkit-transform .4s;
+    transition: background-color, transform .4s, -webkit-transform .4s;
+}
+
+.wrapper h2 {
+    margin-top: 15px;
+}
+
+body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 3;
+}
+
+.portfolio-dots .dot-active {
+    background-color: #19b5fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.portfolio-dots .dot:hover {
+    background-color: #53c6fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}

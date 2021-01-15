@@ -15,7 +15,6 @@ const slider = () => {
         elem[index].style.display = "";
     };
 
-
     const autoPlaySlide = () => {
         prevSlide(slide, currentSlide);
         //prevSlide(dot, currentSlide, 'dot-active');
@@ -34,7 +33,6 @@ const slider = () => {
     const stopSlide = () => {
         clearInterval(interval);
     };
-
 
     startSlide(5000);
 };

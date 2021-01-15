@@ -10,12 +10,10 @@ const sendForm = () => {
         body: JSON.stringify(body)
         // ,credentials: 'include'
     });
-
-    // const form = document.getElementById('form1');
-    // const popUpForm = document.getElementById('form3');
-    //const formInputs = document.querySelector('.client-input');
+    const formCard = document.querySelector('#card_order');
     const checkbox = document.querySelectorAll('.checkbox');
     const checkbox1 = document.querySelector('#check1');
+    const checkboxCardOrder = document.querySelector('#card_check');
     const popUp = document.querySelector('.popup');
     const popUpThanks = document.querySelector('#thanks');
     const bannerForm = document.getElementById('banner-form');
@@ -27,10 +25,10 @@ const sendForm = () => {
     const formBtn = document.querySelector('.btn-send');
     const bannerBtn = document.querySelector('.btn');
     const warningMessage = document.querySelector('.warning');
+    const warningCardMessage = document.querySelector('.card-order-warning');
     statusMessage.style.cssText = 'font-size: 2rem;';
 
     formContent.addEventListener('click', event => {
-        console.log(formContent);
         if (event.target.id === 'check') {
             formBtn.innerText = 'Записаться';
             formHandler(form1);
@@ -47,34 +45,30 @@ const sendForm = () => {
             formHandler(bannerForm);
             warningMessage.textContent = "";
         } else if (event.target.className === "btn" && !checkbox1.checked) {
-            //let div = document.createElement('div');
-            //div.style.fontSize = '20px';
-            //div.style.color = 'red';
-            //div.append('подтвердите соглашение на обработку данных');
-            //bannerBtn.style.fontSize = "10px";
-            //bannerBtn.innerText = 'подтвердите согласие';
-            //bannerBtn.setAttribute('disabled', true);
-            // if (bannerForm.lastElementChild.tagName === 'DIV') {
-            //     console.log('works');
-            //     bannerForm.lastElementChild.remove();
-            // }
-            //bannerForm.append(div);
             warningMessage.textContent = 'подтвердите обработку персональных данных';
-            // setTimeout(() => {
-            //     //checkbox1.checked = false;
-            //     //bannerForm.lastElementChild.remove();
-            //     //bannerBtn.removeAttribute('disabled', true);
-            // }, 1500);
+            return;
+        }
+    });
+
+    formCard.addEventListener('click', event => {
+        if (event.target.id === 'card_check') {
+            formHandler(formCard);
+            warningCardMessage.textContent = "";
+        } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
+            warningCardMessage.textContent = 'подтвердите обработку персональных данных';
             return;
         }
     });
 
     function formHandler(form) {
         form.addEventListener('submit', event => {
+            console.log(event.target);
             event.preventDefault();
             statusMessage.textContent = loadMessage;
             if (event.target === bannerForm) {
                 event.target.children[3].innerText = loadMessage;
+            } else if (event.target === formCard) {
+                event.target.children[8].firstElementChild.textContent = loadMessage;
             } else {
                 event.target.lastElementChild.innerText = loadMessage;
             }
@@ -121,6 +115,11 @@ const sendForm = () => {
                     event.target.children[3].innerText = errorMessage;
                     setTimeout(() => {
                         event.target.children[3].innerText = `Записаться`;
+                    }, 2500);
+                } else if (event.target === formCard) {
+                    event.target.children[8].firstElementChild.textContent = errorMessage;
+                    setTimeout(() => {
+                        event.target.children[8].firstElementChild.textContent = `Забронировать карту`;
                     }, 2500);
                 } else {
                     event.target.lastElementChild.innerText = errorMessage;

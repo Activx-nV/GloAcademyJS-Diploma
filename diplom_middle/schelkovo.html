@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/3590d8cce1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -361,20 +362,31 @@
         <div class="gallery-bg">
             <div class="wrapper">
                 <div class="gallery-slider">
-                    <div class="slide">
+                    <ul class="portfolio-dots">
+                        <li class="dot dot-active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                    </ul>
+                    <div class="slide gallery-slide gallery-slide-active">
                         <img src="images/gallery/photo1.jpg" alt="">
                     </div>
-                    <div class="slide">
+                    <div class="slide gallery-slide" style="display: none">
                         <img src="images/gallery/photo2.jpg" alt="">
                     </div>
-                    <div class="slide">
+                    <div class="slide gallery-slide" style="display: none">
                         <img src="images/gallery/photo3.jpg" alt="">
                     </div>
-                    <div class="slide">
+                    <div class="slide gallery-slide" style="display: none">
                         <img src="images/gallery/photo4.jpg" alt="">
                     </div>
-                    <div class="slide">
+                    <div class="slide gallery-slide" style="display: none">
                         <img src="images/gallery/photo5.jpg" alt="">
+                    </div>
+                    <div class="arrows-gallery">
+                        <i class="far fa-arrow-alt-circle-left" id="arrow-left-services"></i>
+                        <i class="far fa-arrow-alt-circle-right" id="arrow-right-services"></i>
                     </div>
                 </div>
             </div>
