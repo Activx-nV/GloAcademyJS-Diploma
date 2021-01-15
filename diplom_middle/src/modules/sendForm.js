@@ -10,6 +10,14 @@ const sendForm = () => {
         body: JSON.stringify(body)
         // ,credentials: 'include'
     });
+
+    const month1 = document.querySelector('#m1'),
+        month6 = document.querySelector('#m2'),
+        month9 = document.querySelector('#m3'),
+        month12 = document.querySelector('#m4');
+
+
+    const cardOrderBtn = document.querySelector('.card-order-btn');
     const formCard = document.querySelector('#card_order');
     const checkbox = document.querySelectorAll('.checkbox');
     const checkbox1 = document.querySelector('#check1');
@@ -51,12 +59,21 @@ const sendForm = () => {
     });
 
     formCard.addEventListener('click', event => {
-        if (event.target.id === 'card_check') {
-            formHandler(formCard);
-            warningCardMessage.textContent = "";
-        } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
-            warningCardMessage.textContent = 'подтвердите обработку персональных данных';
-            return;
+        if (event.target.id === 'card_check' && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
+            cardOrderBtn.setAttribute('disabled', true);
+        } else if (month1.checked || month6.checked || month9.checked || month12.checked) {
+            if (!checkboxCardOrder.checked) {
+                warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+            }
+            cardOrderBtn.removeAttribute('disabled', true);
+            if (event.target.id === 'card_check' && month1.checked || month6.checked || month9.checked || month12.checked) {
+                formHandler(formCard);
+                warningCardMessage.textContent = "";
+            } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
+                warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+                return;
+            }
         }
     });
 
