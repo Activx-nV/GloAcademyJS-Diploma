@@ -160,21 +160,11 @@ body ul {
     width: 16px;
     margin: 0 10px;
     border-radius: 50%;
-    border: solid white;;
+    border: solid white;
+    ;
     display: inline-block;
     -webkit-transition: background-color, -webkit-transform .4s;
     transition: background-color, transform .4s, -webkit-transform .4s;
-}
-
-.wrapper h2 {
-    margin-top: 15px;
-}
-
-body ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    line-height: 3;
 }
 
 .portfolio-dots .dot-active {
@@ -183,8 +173,235 @@ body ul {
     transform: scale(1.2);
 }
 
-.portfolio-dots .dot:hover {
-    background-color: #53c6fe;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+html#mozaika #cards #card_order-mozaika .cards-types,
+html#schelkovo #cards #card_order-schelkovo .cards-types {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 20px
+}
+
+html#mozaika #cards #card_order-mozaika input[type=radio]+label,
+html#schelkovo #cards #card_order-schelkovo input[type=radio]+label {
+    display: inline-block;
+    width: 145px;
+    height: 92px;
+    border: 1px solid #b7b7b7;
+    color: #1e1c34;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 10px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-right: 4px;
+    margin-bottom: 12px;
+    text-align: center;
+    cursor: pointer
+}
+
+html#mozaika #cards #card_order-mozaika input[type=radio]:checked+label,
+html#schelkovo #cards #card_order-schelkovo input[type=radio]:checked+label {
+    background-image: none;
+    outline: 0;
+    background-color: #ffd11a;
+    border-color: #ffd11a
+}
+
+html#mozaika #cards #card_order-mozaika span,
+html#schelkovo #cards #card_order-schelkovo span {
+    opacity: .6;
+    line-height: 16px
+}
+
+html#mozaika #cards #card_order-mozaika span.cost,
+html#schelkovo #cards #card_order-schelkovo span.cost {
+    font-size: 16px
+}
+
+html#mozaika #cards #card_order-mozaika span.rubl,
+html#schelkovo #cards #card_order-schelkovo span.rubl {
+    font-family: "ALS Rubl";
+    text-transform: none
+}
+
+html#mozaika #cards #card_order-mozaika span.frost,
+html#schelkovo #cards #card_order-schelkovo span.frost {
+    text-transform: none
+}
+
+html#mozaika #cards #card_order-mozaika .form-bottom,
+html#schelkovo #cards #card_order-schelkovo .form-bottom {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+html#mozaika #cards #card_order-mozaika .form-bottom p.submit,
+html#schelkovo #cards #card_order-schelkovo .form-bottom p.submit {
+    padding-left: 10px
+}
+
+#card_order-mozaika input[type="radio"] {
+    display: none;
+}
+
+#card_order-schelkovo input[type="radio"] {
+    display: none;
+}
+
+#card_order-mozaika input {
+    width: 100%;
+    height: 45px;
+    border-radius: 22px;
+    border: 1px solid #b7b7b7;
+    background-color: #fff;
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+#card_order-schelkovo input {
+    width: 100%;
+    height: 45px;
+    border-radius: 22px;
+    border: 1px solid #b7b7b7;
+    background-color: #fff;
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+html#mozaika #cards #card_order-mozaika input[type="radio"]:checked+label,
+html#schelkovo #cards #card_order-schelkovo input[type="radio"]:checked+label {
+    background-image: none;
+    outline: 0;
+    background-color: #ffd11a;
+    border-color: #ffd11a;
+}
+
+html#mozaika #cards #card_order-mozaika input[type="radio"]+label,
+html#schelkovo #cards #card_order-schelkovo input[type="radio"]+label {
+    display: inline-block;
+    width: 145px;
+    height: 92px;
+    border: 1px solid #b7b7b7;
+    border-top-color: rgb(183, 183, 183);
+    border-right-color: rgb(183, 183, 183);
+    border-bottom-color: rgb(183, 183, 183);
+    border-left-color: rgb(183, 183, 183);
+    color: #1e1c34;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 10px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-right: 4px;
+    margin-bottom: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#cards .content {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+#cards .content .left {
+    margin-right: 20px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+html#mozaika #cards .right,
+html#schelkovo #cards .right {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+#card_order-mozaika p.personal-data label {
+    color: #94939a;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+#card_order-schelkovo p.personal-data label {
+    color: #94939a;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+#card_order-mozaika p.personal-data input[type="checkbox"] {
+    display: none;
+}
+
+#card_order-schelkovo p.personal-data input[type="checkbox"] {
+    display: none;
+}
+
+#card_order-mozaika input {
+    width: 100%;
+    height: 45px;
+    border-radius: 22px;
+    border: 1px solid #b7b7b7;
+    background-color: #fff;
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+#card_order-schelkovo input {
+    width: 100%;
+    height: 45px;
+    border-radius: 22px;
+    border: 1px solid #b7b7b7;
+    background-color: #fff;
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+p.personal-data input[type="checkbox"] {
+    display: none;
+}
+
+#card_order-mozaika p.personal-data {
+    padding-left: 30px;
+    margin-top: 4px;
+}
+
+#card_order-schelkovo p.personal-data {
+    padding-left: 30px;
+    margin-top: 4px;
 }

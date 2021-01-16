@@ -6,6 +6,8 @@ import slider from "./modules/slider";
 import sliderCarousel from "./modules/sliderCarousel";
 import sliderPhotos from "./modules/sliderPhotos";
 import clubCardCalc from "./modules/clubCardCalc";
+import mozaikaCardForm from "./modules/mozaikaCardForm";
+import schelkovoCardForm from "./modules/schelkovoCardForm";
 
 //Function calls
 toggleMenu();
@@ -23,3 +25,7 @@ sliderCarousel();
 sliderPhotos();
 
 clubCardCalc();
+
+mozaikaCardForm();
+
+schelkovoCardForm();

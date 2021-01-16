@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/3590d8cce1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -284,7 +284,7 @@
     <section id="cards">
         <div class="wrapper">
             <h2>выбрать карту</h2>
-            <form action="" id="card_order">
+            <form action="" id="card_order-mozaika">
                 <div class="cards-types">
                     <input id="t1" type="radio" name="card-type" value="1s" checked>
                     <label for="t1"><span class="long">1 месяц</span><br><span class="solo">- соло -</span><br><span
@@ -319,16 +319,18 @@
                                 required placeholder="Ваш номер телефона..."></p>
                         <div class="form-bottom">
                             <p class="personal-data">
-                                <input type="checkbox" class="checkbox" required id="card_check"><label
+                                <input type="checkbox" class="checkbox mozaika-checkbox" required id="card_check"><label
                                     for="card_check">Я согласен на
                                     обработку персональных данных</label>
                             </p>
+                            <div class="mozaika-warning" style="color: red; font-size: 13px"></div>
                             <p class="submit">
                                 <button type="submit" class="btn card-order-btn">Забронировать карту</button>
                             </p>
                         </div>
                     </div>
                 </div>
+
             </form>
         </div>
     </section>

@@ -19,13 +19,12 @@ const sendForm = () => {
 
     const checkboxAddressSchelkovo = document.querySelector('#card_leto_schelkovo');
     const checkboxAddressMozaika = document.querySelector('#card_leto_mozaika');
+    const warningCardMessage = document.querySelector('.card-order-warning');
 
     const cardOrderBtn = document.querySelector('.card-order-btn');
-    const formCard = document.querySelector('#card_order');
     const footerForm = document.querySelector('#footer_form');
     const checkbox = document.querySelectorAll('.checkbox');
     const checkbox1 = document.querySelector('#check1');
-    const checkboxCardOrder = document.querySelector('#card_check');
     const popUp = document.querySelector('.popup');
     const popUpThanks = document.querySelector('#thanks');
     const warningPopUp = document.getElementById('warningPopUp');
@@ -38,21 +37,52 @@ const sendForm = () => {
     const formBtn = document.querySelector('.btn-send');
     const bannerBtn = document.querySelector('.btn');
     const warningMessage = document.querySelector('.warning');
-    const warningCardMessage = document.querySelector('.card-order-warning');
     statusMessage.style.cssText = 'font-size: 2rem;';
+    const formCard = document.querySelector('#card_order');
+    const checkboxCardOrder = document.querySelector('#card_check');
 
-    formContent.addEventListener('click', event => {
-        if (event.target.id === 'check') {
-            formBtn.innerText = 'Записаться';
-            formHandler(form1);
-            formHandler(form2);
-        } else if (event.target.className === "btn btn-send") {
-            formBtn.style.fontSize = "11px";
-            formBtn.innerText = 'подтвердите согласие';
-            return;
-        }
-    });
+    if (document.location.pathname === '/index.html') {
+        formContent.addEventListener('click', event => {
+            if (event.target.id === 'check') {
+                formBtn.innerText = 'Записаться';
+                formHandler(form1);
+                formHandler(form2);
+            } else if (event.target.className === "btn btn-send") {
+                formBtn.style.fontSize = "11px";
+                formBtn.innerText = 'подтвердите согласие';
+                return;
+            }
+        });
 
+        formCard.addEventListener('click', event => {
+            if (event.target.id === 'card_check' && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+                warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
+                cardOrderBtn.setAttribute('disabled', true);
+            } else if (!checkboxCardOrder.checked) {
+                warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+            } else if (checkboxCardOrder.checked && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+                warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
+            } else if (checkboxCardOrder.checked) {
+                warningCardMessage.textContent = '';
+            } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked && event.target === checkboxAddressSchelkovo || event.target === checkboxAddressMozaika) {
+                warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
+            } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+                if (!checkboxCardOrder.checked) {
+                    warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+                }
+                cardOrderBtn.removeAttribute('disabled', true);
+                if (event.target.id === 'card_check' && month1.checked || month6.checked || month9.checked || month12.checked) {
+                    warningCardMessage.textContent = "";
+                    cardOrderBtn.removeAttribute('disabled', true);
+                    formHandler(formCard);
+                    warningCardMessage.textContent = "";
+                } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
+                    warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+                    return;
+                }
+            }
+        });
+    }
     bannerForm.addEventListener('click', event => {
         if (event.target.id === 'check1') {
             formHandler(bannerForm);
@@ -68,35 +98,6 @@ const sendForm = () => {
         const footerCheckBoxSchelkovo = document.querySelector('#footer_leto_schelkovo');
         if (footerCheckBoxMozaika.checked || footerCheckBoxSchelkovo.checked) {
             formHandler(footerForm);
-        }
-    });
-
-    formCard.addEventListener('click', event => {
-        if (event.target.id === 'card_check' && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
-            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
-            cardOrderBtn.setAttribute('disabled', true);
-        } else if (!checkboxCardOrder.checked) {
-            warningCardMessage.textContent = 'подтвердите обработку персональных данных';
-        } else if (checkboxCardOrder.checked && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
-            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
-        } else if (checkboxCardOrder.checked) {
-            warningCardMessage.textContent = '';
-        } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked && event.target === checkboxAddressSchelkovo || event.target === checkboxAddressMozaika) {
-            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
-        } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
-            if (!checkboxCardOrder.checked) {
-                warningCardMessage.textContent = 'подтвердите обработку персональных данных';
-            }
-            cardOrderBtn.removeAttribute('disabled', true);
-            if (event.target.id === 'card_check' && month1.checked || month6.checked || month9.checked || month12.checked) {
-                warningCardMessage.textContent = "";
-                cardOrderBtn.removeAttribute('disabled', true);
-                formHandler(formCard);
-                warningCardMessage.textContent = "";
-            } else if (event.target.className === "btn card-order-btn" && !checkboxCardOrder.checked) {
-                warningCardMessage.textContent = 'подтвердите обработку персональных данных';
-                return;
-            }
         }
     });
 
