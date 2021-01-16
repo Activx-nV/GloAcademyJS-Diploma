@@ -38,8 +38,9 @@ const toggleMenu = () => {
 
     btnMenu.addEventListener('click', handlerMenu);
     document.body.addEventListener('click', event => {
+        const clubsList = document.querySelector('.clubs-list  p');
         let target = event.target.tagName;
-        if (menu.style.display === 'block' && target !== 'A' && target !== 'P' && target !== 'LI' && target !== 'UL' && event.target.className !== 'slide-text') {
+        if (menu.style.display === 'block' && target !== 'A' && event.target !== clubsList && target !== 'LI' && target !== 'UL') {
             let flyInterval;
             const flyAnimate = function () {
                 flyInterval = requestAnimationFrame(flyAnimate);

@@ -423,3 +423,11 @@ p.personal-data input[type="checkbox"] {
     animation: fade 1s;
     /* IE 10+, Fx 29+ */
 }
+
+.club-list {
+    z-index: 1002;
+}
+
+.main-slider .slide .slide-text {
+    z-index: 99;
+}
