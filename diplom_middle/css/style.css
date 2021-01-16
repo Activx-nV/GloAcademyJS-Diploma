@@ -405,3 +405,11 @@ p.personal-data input[type="checkbox"] {
     padding-left: 30px;
     margin-top: 4px;
 }
+
+/*sticky menu*/
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+}

@@ -8,6 +8,7 @@ import sliderPhotos from "./modules/sliderPhotos";
 import clubCardCalc from "./modules/clubCardCalc";
 import mozaikaCardForm from "./modules/mozaikaCardForm";
 import schelkovoCardForm from "./modules/schelkovoCardForm";
+import stickyBurgerMenu from "./modules/stickyBurgerMenu";
 
 //Function calls
 toggleMenu();
@@ -29,3 +30,5 @@ clubCardCalc();
 mozaikaCardForm();
 
 schelkovoCardForm();
+
+stickyBurgerMenu();

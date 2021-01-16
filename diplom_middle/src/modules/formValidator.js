@@ -51,8 +51,10 @@ const formValidator = () => {
                 item.value = item.value.replace(/^([^А-Яа-яЁё ])$/g, "");
                 if (item.value.length === 50) {
                     item.value = item.value.substr(0, item.value.length - 1);
-                } else if (item.value[item.value.length - 1].match(/[0-9]/)) {
-                    item.value = item.value.substr(0, item.value.length - 1);
+                } else if (item.value.length !== 0) {
+                    if (item.value[item.value.length - 1].match(/[0-9]/)) {
+                        item.value = item.value.substr(0, item.value.length - 1);
+                    }
                 }
                 //item.value = item.value.replace(/^[А-Яа-яЁё ]{4,6}$/g, "");
             });

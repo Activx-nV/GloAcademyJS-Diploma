@@ -333,7 +333,7 @@
                     <img src="images/cards.png" alt="Клубные карты">
                 </div>
                 <div class="right">
-                    <form action="./server.php" id="card_order" method="post">
+                    <form action="./server.php" name="card_order" id="card_order" method="post">
                         <div class="time">
                             <input id="m1" type="radio" name="card-type" value="1" checked>
                             <label for="m1">1 месяц</label>
@@ -376,7 +376,7 @@
                                 персональных данных</label>
                         </p>
                         <p class="submit">
-                            <button type="submit" class="btn card-order-btn">Забронировать карту</button>
+                            <button type="submit" name="send" class="btn card-order-btn">Забронировать карту</button>
                         </p>
                     </form>
                     <div class="card-order-warning"></div>
