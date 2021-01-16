@@ -1,5 +1,5 @@
 const clubCardCalc = () => {
-    const formCard = document.querySelector('#card_order'),
+    /* const formCard = document.querySelector('#card_order'),
         priceTotal = document.getElementById('price-total'),
         month1 = document.querySelector('#m1'),
         month6 = document.querySelector('#m2'),
@@ -146,10 +146,7 @@ const clubCardCalc = () => {
         //priceHandler();
         checkboxPriceHandler(cardSchelkovoCheckBox, month1PriceSchelkovo,
             month6PriceSchelkovo, month9PriceSchelkovo, month12PriceSchelkovo);
-    });
-
-
-
+    }); */
 };
 
 export default clubCardCalc;

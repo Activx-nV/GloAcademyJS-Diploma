@@ -8,7 +8,7 @@ const toggleMenu = () => {
         let target = event.target.tagName;
         if (menu.style.display !== 'block') {
             let flyInterval;
-            const flyAnimate = function() {
+            const flyAnimate = function () {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count += 0.02;
                 menu.style.opacity = count;
@@ -22,7 +22,7 @@ const toggleMenu = () => {
             menuSelector.textContent = 'Закрыть меню';
         } else if (menu.style.display === 'block' && target === 'A' || target === 'P') {
             let flyInterval;
-            const flyAnimate = function() {
+            const flyAnimate = function () {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count -= 0.02;
                 menu.style.opacity = count;
@@ -41,7 +41,7 @@ const toggleMenu = () => {
         let target = event.target.tagName;
         if (menu.style.display === 'block' && target !== 'A' && target !== 'P' && target !== 'LI' && target !== 'UL' && event.target.className !== 'slide-text') {
             let flyInterval;
-            const flyAnimate = function() {
+            const flyAnimate = function () {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count -= 0.02;
                 menu.style.opacity = count;
@@ -55,7 +55,7 @@ const toggleMenu = () => {
         }
     });
     menu.addEventListener('click', event => {
-        const target = event.target.tagName;
+        let target = event.target.tagName;
         if (target === 'A') {
             handlerMenu();
         }

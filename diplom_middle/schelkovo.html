@@ -506,8 +506,8 @@
                             <div class="choose-club">
                                 <h5>Выбрать клуб</h5>
                                 <div class="club">
-                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"><label
-                                        for="footer_leto_mozaika">
+                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"
+                                        checked><label for="footer_leto_mozaika">
                                         <h6>Тело «Мозаика»</h6>
                                         <p>Россия, Москва, 7-я Кожуховская ул.,&nbsp;9</p>
                                     </label>
@@ -633,6 +633,22 @@
             </div>
         </div>
     </div>
+
+    <div class="popup" id="warningPopUp" style="display: none">
+        <div class="overlay">
+        </div>
+        <div class="form-wrapper">
+            <div class="close-form">
+                <img src="images/close-icon.png" alt="close" class="close_icon">
+            </div>
+            <div class="form-content">
+                <h4>Что-то пошло не так :(</h4>
+                <p style="color: white">Ваша заявка не была отправлена. <br> Попробуйте еще раз чуть позже.</p>
+                <button class="btn close-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
     <div class="popup" id="gift" style="display: none">
         <div class="overlay">
         </div>

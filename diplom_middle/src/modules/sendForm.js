@@ -22,11 +22,13 @@ const sendForm = () => {
 
     const cardOrderBtn = document.querySelector('.card-order-btn');
     const formCard = document.querySelector('#card_order');
+    const footerForm = document.querySelector('#footer_form');
     const checkbox = document.querySelectorAll('.checkbox');
     const checkbox1 = document.querySelector('#check1');
     const checkboxCardOrder = document.querySelector('#card_check');
     const popUp = document.querySelector('.popup');
     const popUpThanks = document.querySelector('#thanks');
+    const warningPopUp = document.getElementById('warningPopUp');
     const bannerForm = document.getElementById('banner-form');
     const form1 = document.getElementById('form1');
     const form2 = document.getElementById('form2');
@@ -58,6 +60,14 @@ const sendForm = () => {
         } else if (event.target.className === "btn" && !checkbox1.checked) {
             warningMessage.textContent = 'подтвердите обработку персональных данных';
             return;
+        }
+    });
+
+    footerForm.addEventListener('click', () => {
+        const footerCheckBoxMozaika = document.querySelector('#footer_leto_mozaika');
+        const footerCheckBoxSchelkovo = document.querySelector('#footer_leto_schelkovo');
+        if (footerCheckBoxMozaika.checked || footerCheckBoxSchelkovo.checked) {
+            formHandler(footerForm);
         }
     });
 
@@ -98,6 +108,8 @@ const sendForm = () => {
                 event.target.children[3].innerText = loadMessage;
             } else if (event.target === formCard) {
                 event.target.children[8].firstElementChild.textContent = loadMessage;
+            } else if (event.target === footerForm) {
+                event.target[3].textContent = loadMessage;
             } else {
                 event.target.lastElementChild.innerText = loadMessage;
             }
@@ -120,6 +132,8 @@ const sendForm = () => {
                     event.target.children[3].innerText = 'Записаться';
                 } else if (event.target === formCard) {
                     event.target.children[8].firstElementChild.textContent = 'Забронировать карту';
+                } else if (event.target === footerForm) {
+                    event.target[3].textContent = 'Перезвоните мне';
                 } else {
                     event.target.lastElementChild.innerText = 'Записаться';
                 }
@@ -141,7 +155,6 @@ const sendForm = () => {
                     }
                 });
             }).catch(error => {
-                //statusMessage.textContent = errorMessage;
                 if (event.target === bannerForm) {
                     event.target.children[3].innerText = errorMessage;
                     setTimeout(() => {
@@ -151,6 +164,24 @@ const sendForm = () => {
                     event.target.children[8].firstElementChild.textContent = errorMessage;
                     setTimeout(() => {
                         event.target.children[8].firstElementChild.textContent = `Забронировать карту`;
+                    }, 2500);
+                } else if (event.target === footerForm) {
+                    warningPopUp.style.display = 'block';
+                    setTimeout(() => {
+                        warningPopUp.style.display = 'none';
+                    }, 3000);
+                    warningPopUp.addEventListener('click', event => {
+                        const target = event.target;
+                        if (target.classList.contains('close_icon')) {
+                            warningPopUp.style.display = 'none';
+                        } else if (target.classList.contains('overlay')) {
+                            warningPopUp.style.display = 'none';
+                        } else if (target.classList.contains('close-btn')) {
+                            warningPopUp.style.display = 'none';
+                        }
+                    });
+                    setTimeout(() => {
+                        event.target[3].textContent = `Перезвоните мне`;
                     }, 2500);
                 } else {
                     event.target.lastElementChild.innerText = errorMessage;
@@ -163,9 +194,9 @@ const sendForm = () => {
             });
         });
     }
-    formHandler(form1);
-    formHandler(form2);
-    formHandler(bannerForm);
+    // formHandler(form1);
+    // formHandler(form2);
+    // formHandler(bannerForm);
 
 };
 
