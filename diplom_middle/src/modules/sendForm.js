@@ -42,13 +42,15 @@ const sendForm = () => {
     const checkboxCardOrder = document.querySelector('#card_check');
 
     formContent.addEventListener('click', event => {
+        const warningCallbackMessage = document.querySelector('.warning-callback');
         if (event.target.id === 'check') {
-            formBtn.innerText = 'Записаться';
+            warningCallbackMessage.textContent = '';
             formHandler(form1);
             formHandler(form2);
         } else if (event.target.className === "btn btn-send") {
             formBtn.style.fontSize = "11px";
-            formBtn.innerText = 'подтвердите согласие';
+            warningCallbackMessage.textContent = 'подтвердите согласие';
+            //formBtn.innerText = 'подтвердите согласие';
             return;
         }
     });
@@ -58,7 +60,6 @@ const sendForm = () => {
             if (checkboxCardOrder.checked) {
                 warningCardMessage.textContent = '';
             } else if (!checkboxCardOrder.checked && event.target.className === "btn card-order-btn") {
-                console.log('works');
                 warningCardMessage.textContent = 'подтвердите обработку персональных данных';
                 if (event.target.className === 'btn card-order-btn' && month1.checked || month6.checked || month9.checked || month12.checked) {
                     formHandler(formCard);

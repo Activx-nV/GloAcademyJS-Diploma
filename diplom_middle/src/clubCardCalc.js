@@ -23,13 +23,13 @@ function priceHandler() {
     month1.addEventListener('change', () => {
         if (cardMozaikaCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month1PriceMozaika - parseFloat(month1PriceMozaika * 0.3).toFixed(2));
+                priceTotal.textContent = (month1PriceMozaika - Math.round(month1PriceMozaika * 0.3));
             } else {
                 priceTotal.textContent = month1PriceMozaika;
             }
         } else if (cardSchelkovoCheckBox) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month1PriceSchelkovo - parseFloat(month1PriceSchelkovo * 0.3).toFixed(2));
+                priceTotal.textContent = (month1PriceSchelkovo - Math.round(month1PriceSchelkovo * 0.3));
             } else {
                 priceTotal.textContent = month1PriceSchelkovo;
             }
@@ -38,13 +38,13 @@ function priceHandler() {
     month6.addEventListener('change', () => {
         if (cardMozaikaCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month6PriceMozaika - parseFloat(month6PriceMozaika * 0.3).toFixed(2));
+                priceTotal.textContent = (month6PriceMozaika - Math.round(month6PriceMozaika * 0.3));
             } else {
                 priceTotal.textContent = month6PriceMozaika;
             }
         } else if (cardSchelkovoCheckBox) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month6PriceSchelkovo - parseFloat(month6PriceSchelkovo * 0.3).toFixed(2));
+                priceTotal.textContent = (month6PriceSchelkovo - Math.round(month6PriceSchelkovo * 0.3));
             } else {
                 priceTotal.textContent = month6PriceSchelkovo;
             }
@@ -53,13 +53,13 @@ function priceHandler() {
     month9.addEventListener('change', () => {
         if (cardMozaikaCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month9PriceMozaika - parseFloat(month9PriceMozaika * 0.3).toFixed(2));
+                priceTotal.textContent = (month9PriceMozaika - Math.round(month9PriceMozaika * 0.3));
             } else {
                 priceTotal.textContent = month9PriceMozaika;
             }
         } else if (cardSchelkovoCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month9PriceSchelkovo - parseFloat(month9PriceSchelkovo * 0.3).toFixed(2));
+                priceTotal.textContent = (month9PriceSchelkovo - Math.round(month9PriceSchelkovo * 0.3));
             } else {
                 priceTotal.textContent = month9PriceSchelkovo;
             }
@@ -68,13 +68,13 @@ function priceHandler() {
     month12.addEventListener('change', () => {
         if (cardMozaikaCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month12PriceMozaika - parseFloat(month12PriceMozaika * 0.3).toFixed(2));
+                priceTotal.textContent = (month12PriceMozaika - Math.round(month12PriceMozaika * 0.3));
             } else {
                 priceTotal.textContent = month12PriceMozaika;
             }
         } else if (cardSchelkovoCheckBox.checked) {
             if (promoCode.value === 'ТЕЛО2020') {
-                priceTotal.textContent = (month12PriceSchelkovo - parseFloat(month12PriceSchelkovo * 0.3).toFixed(2));
+                priceTotal.textContent = (month12PriceSchelkovo - Math.round(month12PriceSchelkovo * 0.3));
             } else {
                 priceTotal.textContent = month12PriceSchelkovo;
             }
@@ -85,23 +85,41 @@ function priceHandler() {
 promoCode.addEventListener('input', () => {
     if (promoCode.value === 'ТЕЛО2020') {
         if (cardMozaikaCheckBox.checked && month1.checked) {
-            priceTotal.textContent = (month1PriceMozaika - parseFloat(month1PriceMozaika * 0.3).toFixed(2));
+            priceTotal.textContent = (month1PriceMozaika - Math.round(month1PriceMozaika * 0.3));
         } else if (cardMozaikaCheckBox.checked && month6.checked) {
-            priceTotal.textContent = (month6PriceMozaika - parseFloat(month6PriceMozaika * 0.3).toFixed(2));
+            priceTotal.textContent = (month6PriceMozaika - Math.round(month6PriceMozaika * 0.3));
         } else if (cardMozaikaCheckBox.checked && month9.checked) {
-            priceTotal.textContent = (month9PriceMozaika - parseFloat(month9PriceMozaika * 0.3).toFixed(2));
+            priceTotal.textContent = (month9PriceMozaika - Math.round(month9PriceMozaika * 0.3));
         } else if (cardMozaikaCheckBox.checked && month12.checked) {
-            priceTotal.textContent = (month12PriceMozaika - parseFloat(month12PriceMozaika * 0.3).toFixed(2));
-        } else if (cardSchelkovoCheckBox && month1.checked) {
-            priceTotal.textContent = (month1PriceSchelkovo - parseFloat(month1PriceSchelkovo * 0.3).toFixed(2));
-        } else if (cardSchelkovoCheckBox && month6.checked) {
-            priceTotal.textContent = (month6PriceSchelkovo - parseFloat(month6PriceSchelkovo * 0.3).toFixed(2));
-        } else if (cardSchelkovoCheckBox && month9.checked) {
-            priceTotal.textContent = (month9PriceSchelkovo - parseFloat(month9PriceSchelkovo * 0.3).toFixed(2));
-        } else if (cardSchelkovoCheckBox && month12.checked) {
-            priceTotal.textContent = (month12PriceSchelkovo - parseFloat(month12PriceSchelkovo * 0.3).toFixed(2));
+            priceTotal.textContent = (month12PriceMozaika - Math.round(month12PriceMozaika * 0.3));
+        } else if (cardSchelkovoCheckBox.checked && month1.checked) {
+            priceTotal.textContent = (month1PriceSchelkovo - Math.round(month1PriceSchelkovo * 0.3));
+        } else if (cardSchelkovoCheckBox.checked && month6.checked) {
+            priceTotal.textContent = (month6PriceSchelkovo - Math.round(month6PriceSchelkovo * 0.3));
+        } else if (cardSchelkovoCheckBox.checked && month9.checked) {
+            priceTotal.textContent = (month9PriceSchelkovo - Math.round(month9PriceSchelkovo * 0.3));
+        } else if (cardSchelkovoCheckBox.checked && month12.checked) {
+            priceTotal.textContent = (month12PriceSchelkovo - Math.round(month12PriceSchelkovo * 0.3));
         }
         //priceHandler();
+    } else if (promoCode.value !== 'ТЕЛО2020') {
+        if (cardMozaikaCheckBox.checked && month1.checked) {
+            priceTotal.textContent = month1PriceMozaika;
+        } else if (cardMozaikaCheckBox.checked && month6.checked) {
+            priceTotal.textContent = month6PriceMozaika;
+        } else if (cardMozaikaCheckBox.checked && month9.checked) {
+            priceTotal.textContent = month9PriceMozaika;
+        } else if (cardMozaikaCheckBox.checked && month12.checked) {
+            priceTotal.textContent = month12PriceMozaika;
+        } else if (cardSchelkovoCheckBox.checked && month1.checked) {
+            priceTotal.textContent = month1PriceSchelkovo;
+        } else if (cardSchelkovoCheckBox.checked && month6.checked) {
+            priceTotal.textContent = month6PriceSchelkovo;
+        } else if (cardSchelkovoCheckBox.checked && month9.checked) {
+            priceTotal.textContent = month9PriceSchelkovo;
+        } else if (cardSchelkovoCheckBox.checked && month12.checked) {
+            priceTotal.textContent = month12PriceSchelkovo;
+        }
     }
 });
 priceHandler();
@@ -114,28 +132,28 @@ cardMozaikaCheckBox.addEventListener('change', () => {
 function checkboxPriceHandler(checkbox, month1Price, month6Price, month9Price, month12Price) {
     if (checkbox.checked && month1.checked) {
         if (promoCode.value === 'ТЕЛО2020') {
-            priceTotal.textContent = (month1Price - parseFloat(month1Price * 0.3).toFixed(2));
+            priceTotal.textContent = (month1Price - Math.round(month1Price * 0.3));
         } else {
             priceTotal.textContent = month1Price;
         }
     }
     if (checkbox.checked && month6.checked) {
         if (promoCode.value === 'ТЕЛО2020') {
-            priceTotal.textContent = (month6Price - parseFloat(month6Price * 0.3).toFixed(2));
+            priceTotal.textContent = (month6Price - Math.round(month6Price * 0.3));
         } else {
             priceTotal.textContent = month6Price;
         }
     }
     if (checkbox.checked && month9.checked) {
         if (promoCode.value === 'ТЕЛО2020') {
-            priceTotal.textContent = (month9Price - parseFloat(month9Price * 0.3).toFixed(2));
+            priceTotal.textContent = (month9Price - Math.round(month9Price * 0.3));
         } else {
             priceTotal.textContent = month9Price;
         }
     }
     if (checkbox.checked && month12.checked) {
         if (promoCode.value === 'ТЕЛО2020') {
-            priceTotal.textContent = (month12Price - parseFloat(month12Price * 0.3).toFixed(2));
+            priceTotal.textContent = (month12Price - Math.round(month12Price * 0.3));
         } else {
             priceTotal.textContent = month12Price;
         }
