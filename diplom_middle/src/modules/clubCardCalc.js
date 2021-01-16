@@ -22,13 +22,13 @@ const clubCardCalc = () => {
     function priceHandler() {
         month1.addEventListener('change', () => {
             if (cardMozaikaCheckBox.checked) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month1PriceMozaika - parseFloat(month1PriceMozaika * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month1PriceMozaika;
                 }
             } else if (cardSchelkovoCheckBox) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month1PriceSchelkovo - parseFloat(month1PriceSchelkovo * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month1PriceSchelkovo;
@@ -37,13 +37,13 @@ const clubCardCalc = () => {
         });
         month6.addEventListener('change', () => {
             if (cardMozaikaCheckBox.checked) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month6PriceMozaika - parseFloat(month6PriceMozaika * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month6PriceMozaika;
                 }
             } else if (cardSchelkovoCheckBox) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month6PriceSchelkovo - parseFloat(month6PriceSchelkovo * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month6PriceSchelkovo;
@@ -52,13 +52,13 @@ const clubCardCalc = () => {
         });
         month9.addEventListener('change', () => {
             if (cardMozaikaCheckBox.checked) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month9PriceMozaika - parseFloat(month9PriceMozaika * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month9PriceMozaika;
                 }
-            } else if (cardSchelkovoCheckBox) {
-                if (promoCode.value === 'ТЕЛО2019') {
+            } else if (cardSchelkovoCheckBox.checked) {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month9PriceSchelkovo - parseFloat(month9PriceSchelkovo * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month9PriceSchelkovo;
@@ -67,13 +67,13 @@ const clubCardCalc = () => {
         });
         month12.addEventListener('change', () => {
             if (cardMozaikaCheckBox.checked) {
-                if (promoCode.value === 'ТЕЛО2019') {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month12PriceMozaika - parseFloat(month12PriceMozaika * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month12PriceMozaika;
                 }
-            } else if (cardSchelkovoCheckBox) {
-                if (promoCode.value === 'ТЕЛО2019') {
+            } else if (cardSchelkovoCheckBox.checked) {
+                if (promoCode.value === 'ТЕЛО2020') {
                     priceTotal.textContent = (month12PriceSchelkovo - parseFloat(month12PriceSchelkovo * 0.3).toFixed(2));
                 } else {
                     priceTotal.textContent = month12PriceSchelkovo;
@@ -83,24 +83,69 @@ const clubCardCalc = () => {
     }
 
     promoCode.addEventListener('input', () => {
-        if (promoCode.value === 'ТЕЛО2019') {
-            priceHandler();
+        if (promoCode.value === 'ТЕЛО2020') {
+            if (cardMozaikaCheckBox.checked && month1.checked) {
+                priceTotal.textContent = (month1PriceMozaika - parseFloat(month1PriceMozaika * 0.3).toFixed(2));
+            } else if (cardMozaikaCheckBox.checked && month6.checked) {
+                priceTotal.textContent = (month6PriceMozaika - parseFloat(month6PriceMozaika * 0.3).toFixed(2));
+            } else if (cardMozaikaCheckBox.checked && month9.checked) {
+                priceTotal.textContent = (month9PriceMozaika - parseFloat(month9PriceMozaika * 0.3).toFixed(2));
+            } else if (cardMozaikaCheckBox.checked && month12.checked) {
+                priceTotal.textContent = (month12PriceMozaika - parseFloat(month12PriceMozaika * 0.3).toFixed(2));
+            } else if (cardSchelkovoCheckBox && month1.checked) {
+                priceTotal.textContent = (month1PriceSchelkovo - parseFloat(month1PriceSchelkovo * 0.3).toFixed(2));
+            } else if (cardSchelkovoCheckBox && month6.checked) {
+                priceTotal.textContent = (month6PriceSchelkovo - parseFloat(month6PriceSchelkovo * 0.3).toFixed(2));
+            } else if (cardSchelkovoCheckBox && month9.checked) {
+                priceTotal.textContent = (month9PriceSchelkovo - parseFloat(month9PriceSchelkovo * 0.3).toFixed(2));
+            } else if (cardSchelkovoCheckBox && month12.checked) {
+                priceTotal.textContent = (month12PriceSchelkovo - parseFloat(month12PriceSchelkovo * 0.3).toFixed(2));
+            }
+            //priceHandler();
         }
     });
-
+    priceHandler();
     cardMozaikaCheckBox.addEventListener('change', () => {
-        month1.checked = false;
-        month6.checked = false;
-        month9.checked = false;
-        month12.checked = false;
-        priceHandler();
+        //priceHandler();
+        checkboxPriceHandler(cardMozaikaCheckBox, month1PriceMozaika,
+            month6PriceMozaika, month9PriceMozaika, month12PriceMozaika);
     });
+
+    function checkboxPriceHandler(checkbox, month1Price, month6Price, month9Price, month12Price) {
+        if (checkbox.checked && month1.checked) {
+            if (promoCode.value === 'ТЕЛО2020') {
+                priceTotal.textContent = (month1Price - parseFloat(month1Price * 0.3).toFixed(2));
+            } else {
+                priceTotal.textContent = month1Price;
+            }
+        }
+        if (checkbox.checked && month6.checked) {
+            if (promoCode.value === 'ТЕЛО2020') {
+                priceTotal.textContent = (month6Price - parseFloat(month6Price * 0.3).toFixed(2));
+            } else {
+                priceTotal.textContent = month6Price;
+            }
+        }
+        if (checkbox.checked && month9.checked) {
+            if (promoCode.value === 'ТЕЛО2020') {
+                priceTotal.textContent = (month9Price - parseFloat(month9Price * 0.3).toFixed(2));
+            } else {
+                priceTotal.textContent = month9Price;
+            }
+        }
+        if (checkbox.checked && month12.checked) {
+            if (promoCode.value === 'ТЕЛО2020') {
+                priceTotal.textContent = (month12Price - parseFloat(month12Price * 0.3).toFixed(2));
+            } else {
+                priceTotal.textContent = month12Price;
+            }
+        }
+    }
+
     cardSchelkovoCheckBox.addEventListener('change', () => {
-        month1.checked = false;
-        month6.checked = false;
-        month9.checked = false;
-        month12.checked = false;
-        priceHandler();
+        //priceHandler();
+        checkboxPriceHandler(cardSchelkovoCheckBox, month1PriceSchelkovo,
+            month6PriceSchelkovo, month9PriceSchelkovo, month12PriceSchelkovo);
     });
 
 

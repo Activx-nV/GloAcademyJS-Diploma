@@ -17,6 +17,9 @@ const sendForm = () => {
         month12 = document.querySelector('#m4');
 
 
+    const checkboxAddressSchelkovo = document.querySelector('#card_leto_schelkovo');
+    const checkboxAddressMozaika = document.querySelector('#card_leto_mozaika');
+
     const cardOrderBtn = document.querySelector('.card-order-btn');
     const formCard = document.querySelector('#card_order');
     const checkbox = document.querySelectorAll('.checkbox');
@@ -62,12 +65,17 @@ const sendForm = () => {
         if (event.target.id === 'card_check' && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
             warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
             cardOrderBtn.setAttribute('disabled', true);
+        } else if (!checkboxCardOrder.checked) {
+            warningCardMessage.textContent = 'подтвердите обработку персональных данных';
+        } else if (checkboxCardOrder.checked && !month1.checked && !month6.checked && !month9.checked && !month12.checked) {
+            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
+        } else if (checkboxCardOrder.checked) {
+            warningCardMessage.textContent = '';
+        } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked && event.target === checkboxAddressSchelkovo || event.target === checkboxAddressMozaika) {
+            warningCardMessage.textContent = 'Пожалуйста, выберите на сколько месяцев вы желаете купить абонемент';
         } else if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
             if (!checkboxCardOrder.checked) {
                 warningCardMessage.textContent = 'подтвердите обработку персональных данных';
-            }
-            if (!month1.checked && !month6.checked && !month9.checked && !month12.checked) {
-                warningCardMessage.textContent = '';
             }
             cardOrderBtn.removeAttribute('disabled', true);
             if (event.target.id === 'card_check' && month1.checked || month6.checked || month9.checked || month12.checked) {
