@@ -411,5 +411,15 @@ p.personal-data input[type="checkbox"] {
     position: fixed;
     top: 0;
     width: 100%;
-    padding-top: 10px;
+}
+
+.popup-menu {
+    -webkit-animation: fade 1s;
+    /* Safari 4+ */
+    -moz-animation: fade 1s;
+    /* Fx 5+ */
+    -o-animation: fade 1s;
+    /* Opera 12+ */
+    animation: fade 1s;
+    /* IE 10+, Fx 29+ */
 }
