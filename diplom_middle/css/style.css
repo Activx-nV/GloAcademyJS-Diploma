@@ -52,7 +52,7 @@ body ul {
 
 .arrows-gallery-left {
     background-color: yellow;
-    position: absolute;
+    position: relative;
     width: 35px;
     height: 35px;
     border-radius: 100%;
@@ -60,8 +60,9 @@ body ul {
     margin-right: auto;
     align-items: center;
     justify-content: center;
-    margin-left: 7%;
-    margin-top: 11%;
+    right: -9%;
+    top: 16em;
+    cursor: pointer;
 }
 
 .arrows-gallery-left img {
@@ -72,7 +73,7 @@ body ul {
 
 .arrows-gallery-right {
     background-color: yellow;
-    position: absolute;
+    position: relative;
     width: 35px;
     height: 35px;
     border-radius: 100%;
@@ -80,8 +81,8 @@ body ul {
     margin-right: auto;
     align-items: center;
     justify-content: center;
-    margin-left: 51%;
-    margin-top: 11%
+    top: 13.5em;
+    left: 89%;
 }
 
 .arrows-gallery-right img {
@@ -159,7 +160,7 @@ body ul {
 
 .portfolio-dots .dot {
     position: relative;
-    top: 400px;
+    top: 27em;
     z-index: 99;
     cursor: pointer;
     height: 16px;
@@ -167,7 +168,6 @@ body ul {
     margin: 0 10px;
     border-radius: 50%;
     border: solid white;
-    ;
     display: inline-block;
     -webkit-transition: background-color, -webkit-transform .4s;
     transition: background-color, transform .4s, -webkit-transform .4s;
@@ -459,14 +459,7 @@ p.personal-data input[type="checkbox"] {
         left: 14%;
     }
 
-    .arrows-gallery-right {
-        width: 35px;
-        height: 35px;
-        border-radius: 100%;
-        display: flex;
-        margin-left: 61%;
-        cursor: pointer;
-    }
+    
 }
 
 @media(max-width: 1200px) {
@@ -478,20 +471,16 @@ p.personal-data input[type="checkbox"] {
         width: 35px;
         height: 35px;
         border-radius: 100%;
-        display: flex;
-        margin-left: 11%;
-        margin-top: 17%;
         cursor: pointer;
+        left: 6%;
     }
 
     .arrows-gallery-right {
         width: 35px;
         height: 35px;
         border-radius: 100%;
-        display: flex;
-        margin-left: 81%;
-        margin-top: 17%;
         cursor: pointer;
+        left: 90%;
     }
 }
 
@@ -506,8 +495,7 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 17%;
+        left: 0;
         cursor: pointer;
     }
 
@@ -516,9 +504,12 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 89%;
-        margin-top: 17%;
+        left: 95%;
         cursor: pointer;
+    }
+    .portfolio-dots {
+        position: relative;
+        top: -3em;
     }
 }
 
@@ -542,18 +533,17 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 89%;
-        margin-top: 17%;
+        left: 93%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -90px;
+        top: -5em;
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 769px) {
     .slider-dots {
         display: none;
     }
@@ -563,9 +553,10 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 3%;
-        margin-top: 17%;
+        top: 20.5em;
+        left: 1%;
         cursor: pointer;
+        z-index: 99;
     }
 
     .arrows-gallery-right {
@@ -573,14 +564,15 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 89%;
-        margin-top: 17%;
+        top: 18em;
+        left: 90%;
         cursor: pointer;
+        z-index: 99;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -90px;
+        top: -2.5em;
     }
 }
 
@@ -593,9 +585,9 @@ p.personal-data input[type="checkbox"] {
         width: 35px;
         height: 35px;
         border-radius: 100%;
+        top: 18.5em;
+        left: 2%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 55%;
         cursor: pointer;
     }
 
@@ -603,15 +595,15 @@ p.personal-data input[type="checkbox"] {
         width: 35px;
         height: 35px;
         border-radius: 100%;
+        top: 16em;
+        left: 88%;
         display: flex;
-        margin-left: 89%;
-        margin-top: 55%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -130px;
+        top: -29em;
     }
 }
 
@@ -625,8 +617,8 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 55%;
+        top: 14em;
+        left: 2%;
         cursor: pointer;
     }
 
@@ -635,14 +627,14 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 80%;
-        margin-top: 55%;
+        top: 11.5em;
+        left: 86%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -205px;
+        top: -12em;
     }
 }
 
@@ -656,8 +648,8 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 55%;
+        top: 12.5em;
+        left: 2%;
         cursor: pointer;
     }
 
@@ -666,19 +658,19 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 80%;
-        margin-top: 55%;
+        top: 10em;
+        left: 85%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -230px;
+        top: -13em;
     }
 
     .portfolio-dots .dot {
-        height: 14px;
-        width: 14px;
+        height: 13px;
+        width: 13px;
         display: inline-block;
     }
 }
@@ -693,8 +685,8 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 55%;
+        top: 21.5em;
+        left: 2%;
         cursor: pointer;
     }
 
@@ -703,19 +695,19 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 80%;
-        margin-top: 55%;
+        top: 18.5em;
+        left: 85%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -230px;
+        top: -15em;
     }
 
     .portfolio-dots .dot {
-        height: 14px;
-        width: 14px;
+        height: 12px;
+        width: 12px;
         display: inline-block;
     }
 }
@@ -730,8 +722,8 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 5%;
-        margin-top: 55%;
+        top: 20em;
+        left: 2%;
         cursor: pointer;
     }
 
@@ -740,19 +732,19 @@ p.personal-data input[type="checkbox"] {
         height: 35px;
         border-radius: 100%;
         display: flex;
-        margin-left: 80%;
-        margin-top: 55%;
+        top: 17em;
+        left: 87%;
         cursor: pointer;
     }
 
     .portfolio-dots {
         position: relative;
-        top: -255px;
+        top: -15em;
     }
 
     .portfolio-dots .dot {
-        height: 14px;
-        width: 14px;
+        height: 12px;
+        width: 12px;
         display: inline-block;
     }
 }

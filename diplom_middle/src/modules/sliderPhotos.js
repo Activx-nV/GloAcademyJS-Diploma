@@ -47,15 +47,15 @@ const sliderPhotos = () => {
         event.preventDefault();
         const target = event.target;
 
-        if (!target.matches('#arrow-left-gallery, #arrow-right-gallery, .dot')) {
+        if (!target.matches('#arrow-left-gallery, #arrow-right-gallery, .dot, .arrows-gallery-left, .arrows-gallery-right')) {
             return;
         }
 
         prevSlide(slide, currentSlide, 'gallery-slide-active');
         prevSlideDot(dot, currentSlide, 'dot-active');
-        if (target.matches('#arrow-right-gallery')) {
+        if (target.matches('#arrow-right-gallery') || target.matches('.arrows-gallery-right')) {
             currentSlide++;
-        } else if (target.matches('#arrow-left-gallery')) {
+        } else if (target.matches('#arrow-left-gallery') || target.matches('.arrows-gallery-left')) {
             currentSlide--;
         } else if (target.matches('.dot')) {
             dot.forEach((elem, index) => {
@@ -74,12 +74,16 @@ const sliderPhotos = () => {
 
     });
     slider.addEventListener('mouseover', event => {
-        if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') || event.target.matches('.dot')) {
+        if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') ||
+        event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
+        event.target.matches('.arrows-gallery-right')) {
             stopSlide();
         }
     });
     slider.addEventListener('mouseout', event => {
-        if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') || event.target.matches('.dot')) {
+        if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') ||
+        event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
+        event.target.matches('.arrows-gallery-right')) {
             startSlide();
         }
     });

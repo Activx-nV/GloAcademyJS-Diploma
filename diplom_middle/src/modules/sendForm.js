@@ -55,7 +55,7 @@ const sendForm = () => {
         }
     });
 
-    if (document.location.pathname === '/index.html') {
+    if (document.location.pathname !== '/mozaika.html' && document.location.pathname !== '/schelkovo7html') {
         formCard.addEventListener('click', event => {
             if (checkboxCardOrder.checked) {
                 warningCardMessage.textContent = '';
