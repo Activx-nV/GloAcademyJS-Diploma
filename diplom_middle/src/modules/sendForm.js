@@ -78,11 +78,18 @@ const sendForm = () => {
         }
     });
 
-    footerForm.addEventListener('click', () => {
+    footerForm.addEventListener('click', event => {
         const footerCheckBoxMozaika = document.querySelector('#footer_leto_mozaika');
         const footerCheckBoxSchelkovo = document.querySelector('#footer_leto_schelkovo');
+        const footerSendBtn = document.querySelector('.popup-btn-footer');
+        const warningFooter = document.querySelector('.warning-footer');
+        footerSendBtn.setAttribute('disabled', true);
         if (footerCheckBoxMozaika.checked || footerCheckBoxSchelkovo.checked) {
+            warningFooter.textContent = '';
+            footerSendBtn.removeAttribute('disabled', true);
             formHandler(footerForm);
+        } else if (!footerCheckBoxMozaika.checked && !footerCheckBoxSchelkovo.checked) {
+            warningFooter.textContent = 'Не забудьте выбрать один из клубов, чтобы отправить заявку';
         }
     });
 

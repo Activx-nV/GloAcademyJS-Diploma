@@ -10,9 +10,9 @@ const schelkovoCardForm = () => {
 
     function sendSchelkovoForm(form) {
         form.addEventListener('submit', event => {
-            console.log(event.target[9].textContent);
             const warningPopUp = document.getElementById('warningPopUp');
             let schelkovoWarningMessage = document.querySelector('.schelkovo-warning');
+            const popUpThanks = document.querySelector('#thanks');
             const allPageInputs = document.querySelectorAll('input');
             const loadMessage = 'Загрузка...';
             const checkbox = document.querySelectorAll('.checkbox');
@@ -33,6 +33,10 @@ const schelkovoCardForm = () => {
                 });
                 event.target[9].textContent = 'Забронировать карту';
                 schelkovoWarningMessage.textContent = 'Заявка отправлена';
+                popUpThanks.style.display = 'block';
+                setTimeout(() => {
+                    popUpThanks.style.display = 'none';
+                }, 3000);
                 setTimeout(() => {
                     schelkovoWarningMessage.textContent = '';
                 }, 3000);

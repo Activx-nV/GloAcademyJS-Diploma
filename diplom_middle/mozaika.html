@@ -284,7 +284,7 @@
     <section id="cards">
         <div class="wrapper">
             <h2>выбрать карту</h2>
-            <form action="" id="card_order-mozaika">
+            <form action="" name="card_order-mozaika" id="card_order-mozaika">
                 <div class="cards-types">
                     <input id="t1" type="radio" name="card-type" value="1s" checked>
                     <label for="t1"><span class="long">1 месяц</span><br><span class="solo">- соло -</span><br><span
@@ -316,7 +316,7 @@
                         <p class="input-text"><input name="name" class="text-input" type="text" required
                                 placeholder="Ваше имя..."></p>
                         <p class="input-text"><input type="tel" class="num-input" name="phone" id="callback_form-phone"
-                                required placeholder="Ваш номер телефона..."></p>
+                                required placeholder="Ваш номер телефона... +37256986512"></p>
                         <div class="form-bottom">
                             <p class="personal-data">
                                 <input type="checkbox" class="checkbox mozaika-checkbox" required id="card_check"><label
@@ -481,8 +481,8 @@
                             <div class="choose-club">
                                 <h5>Выбрать клуб</h5>
                                 <div class="club">
-                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"
-                                        checked><label for="footer_leto_mozaika">
+                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"><label
+                                        for="footer_leto_mozaika">
                                         <h6>Тело «Мозаика»</h6>
                                         <p>Россия, Москва, 7-я Кожуховская ул.,&nbsp;9</p>
                                     </label>
@@ -506,6 +506,7 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="warning-footer" style="color: red; font-size: 13px"></div>
                     </form>
                 </div>
             </div>

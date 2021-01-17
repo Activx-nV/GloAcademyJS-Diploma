@@ -11,6 +11,7 @@ const mozaikaCardForm = () => {
     function sendMozaikaForm(form) {
         form.addEventListener('submit', event => {
             const warningPopUp = document.getElementById('warningPopUp');
+            const popUpThanks = document.querySelector('#thanks');
             let mozaikaWarningMessage = document.querySelector('.mozaika-warning');
             const allPageInputs = document.querySelectorAll('input');
             const loadMessage = 'Загрузка...';
@@ -32,6 +33,10 @@ const mozaikaCardForm = () => {
                 });
                 mozaikaWarningMessage.textContent = 'Забронировать карту';
                 mozaikaWarningMessage.textContent = 'Заявка отправлена';
+                popUpThanks.style.display = 'block';
+                setTimeout(() => {
+                    popUpThanks.style.display = 'none';
+                }, 3000);
                 setTimeout(() => {
                     mozaikaWarningMessage.textContent = '';
                 }, 3000);

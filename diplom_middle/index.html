@@ -293,7 +293,13 @@
     <section id="gallery">
         <h2>Фотогалерея</h2>
         <div class="gallery-bg">
-            <div class="wrapper">
+            <div class="wrapper slider-wrapper">
+                <div class="arrows-gallery-left">
+                    <img src="images/arrow-left.png" alt="slider-arrow-left" id="arrow-left-gallery">
+                </div>
+                <div class="arrows-gallery-right">
+                    <img src="images/arrow-right.png" alt="slider-arrow-right" id="arrow-right-gallery">
+                </div>
                 <div class="gallery-slider">
                     <ul class="portfolio-dots">
                         <li class="dot dot-active"></li>
@@ -316,10 +322,6 @@
                     </div>
                     <div class="slide gallery-slide" style="display: none">
                         <img src="images/gallery/photo5.jpg" alt="">
-                    </div>
-                    <div class="arrows-gallery">
-                        <i class="far fa-arrow-alt-circle-left" id="arrow-left-services"></i>
-                        <i class="far fa-arrow-alt-circle-right" id="arrow-right-services"></i>
                     </div>
                 </div>
             </div>
@@ -412,8 +414,8 @@
                             <div class="choose-club">
                                 <h5>Выбрать клуб</h5>
                                 <div class="club">
-                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"
-                                        checked><label for="footer_leto_mozaika">
+                                    <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"><label
+                                        for="footer_leto_mozaika">
                                         <h6>Тело «Мозаика»</h6>
                                         <p>Россия, Москва, 7-я Кожуховская ул.,&nbsp;9</p>
                                     </label>
@@ -437,6 +439,7 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="warning-footer" style="color: red; font-size: 13px"></div>
                     </form>
                 </div>
             </div>
