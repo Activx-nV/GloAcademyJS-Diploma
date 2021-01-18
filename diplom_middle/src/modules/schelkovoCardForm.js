@@ -43,6 +43,16 @@ const schelkovoCardForm = () => {
                 checkbox.forEach(elem => {
                     elem.checked = false;
                 });
+                popUpThanks.addEventListener('click', event => {
+                    const target = event.target;
+                    if (target.classList.contains('close_icon')) {
+                        popUpThanks.style.display = 'none';
+                    } else if (target.classList.contains('overlay')) {
+                        popUpThanks.style.display = 'none';
+                    } else if (target.classList.contains('close-btn')) {
+                        popUpThanks.style.display = 'none';
+                    }
+                });
             }).catch(error => {
                 warningPopUp.style.display = 'block';
                 setTimeout(() => {

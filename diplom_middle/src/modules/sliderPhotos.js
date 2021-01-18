@@ -75,15 +75,15 @@ const sliderPhotos = () => {
     });
     slider.addEventListener('mouseover', event => {
         if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') ||
-        event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
-        event.target.matches('.arrows-gallery-right')) {
+            event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
+            event.target.matches('.arrows-gallery-right')) {
             stopSlide();
         }
     });
     slider.addEventListener('mouseout', event => {
         if (event.target.matches('#arrow-right-gallery') || event.target.matches('#arrow-left-gallery') ||
-        event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
-        event.target.matches('.arrows-gallery-right')) {
+            event.target.matches('.dot') || event.target.matches('.arrows-gallery-left') ||
+            event.target.matches('.arrows-gallery-right')) {
             startSlide();
         }
     });

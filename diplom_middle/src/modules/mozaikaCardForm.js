@@ -24,6 +24,7 @@ const mozaikaCardForm = () => {
             formData.forEach((val, key) => {
                 body[key] = val;
             });
+            console.log();
             postData(body).then(response => {
                 if (response.status !== 200) {
                     throw new Error('Status error, something went wrong.');
@@ -42,6 +43,16 @@ const mozaikaCardForm = () => {
                 }, 3000);
                 checkbox.forEach(elem => {
                     elem.checked = false;
+                });
+                popUpThanks.addEventListener('click', event => {
+                    const target = event.target;
+                    if (target.classList.contains('close_icon')) {
+                        popUpThanks.style.display = 'none';
+                    } else if (target.classList.contains('overlay')) {
+                        popUpThanks.style.display = 'none';
+                    } else if (target.classList.contains('close-btn')) {
+                        popUpThanks.style.display = 'none';
+                    }
                 });
             }).catch(error => {
                 warningPopUp.style.display = 'block';

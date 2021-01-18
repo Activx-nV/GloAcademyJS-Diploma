@@ -55,7 +55,7 @@ const sendForm = () => {
         }
     });
 
-    if (document.location.pathname !== '/mozaika.html' && document.location.pathname !== '/schelkovo7html') {
+    if (document.location.pathname !== '/mozaika.html' && document.location.pathname !== '/schelkovo.html') {
         formCard.addEventListener('click', event => {
             if (checkboxCardOrder.checked) {
                 warningCardMessage.textContent = '';
@@ -116,9 +116,9 @@ const sendForm = () => {
                 if (response.status !== 200) {
                     throw new Error('Status error, something went wrong.');
                 }
-                allPageInputs.forEach(item => {
-                    item.value = '';
-                });
+                // allPageInputs.forEach(item => {
+                //     item.value = '';
+                // });
                 popUp.style.display = 'none';
                 if (event.target === bannerForm) {
                     event.target.children[3].innerText = 'Записаться';
@@ -126,6 +126,8 @@ const sendForm = () => {
                     event.target.children[8].firstElementChild.textContent = 'Забронировать карту';
                 } else if (event.target === footerForm) {
                     event.target[3].textContent = 'Перезвоните мне';
+                } else if (event.target === form1) {
+                    event.target.lastElementChild.innerText = '';
                 } else {
                     event.target.lastElementChild.innerText = 'Записаться';
                 }
@@ -137,6 +139,9 @@ const sendForm = () => {
                     elem.checked = false;
                 });
                 popUpThanks.addEventListener('click', event => {
+                    allPageInputs.forEach(item => {
+                        item.value = '';
+                    });
                     const target = event.target;
                     if (target.classList.contains('close_icon')) {
                         popUpThanks.style.display = 'none';
@@ -188,6 +193,7 @@ const sendForm = () => {
             });
         });
     }
+
     // formHandler(form1);
     // formHandler(form2);
     // formHandler(bannerForm);

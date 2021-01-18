@@ -391,4 +391,5 @@ const sliderСarousel = new SliderCarousel({
     ]
 });
 
+
 export default sliderСarousel;

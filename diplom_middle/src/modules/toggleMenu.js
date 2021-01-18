@@ -5,7 +5,7 @@ const toggleMenu = () => {
 
     let count = 0;
     const handlerMenu = event => {
-        let target = event.target.tagName;
+        //const target = event.target.tagName;
         if (menu.style.display !== 'block') {
             let flyInterval;
             const flyAnimate = function () {
@@ -20,7 +20,7 @@ const toggleMenu = () => {
 
             menu.style.display = 'block';
             menuSelector.textContent = 'Закрыть меню';
-        } else if (menu.style.display === 'block' && target === 'A' || target === 'P') {
+        } else if (menu.style.display === 'block' && event.target.tagName === 'A' || event.target.tagName === 'P') {
             let flyInterval;
             const flyAnimate = function () {
                 flyInterval = requestAnimationFrame(flyAnimate);
@@ -37,6 +37,7 @@ const toggleMenu = () => {
     };
 
     btnMenu.addEventListener('click', handlerMenu);
+
     document.body.addEventListener('click', event => {
         const clubsList = document.querySelector('.clubs-list  p');
         let target = event.target.tagName;
@@ -55,9 +56,10 @@ const toggleMenu = () => {
             menuSelector.textContent = 'Выбрать клуб';
         }
     });
+
     menu.addEventListener('click', event => {
-        let target = event.target.tagName;
-        if (target === 'A') {
+        //let target = event.target.tagName;
+        if (event.target.tagName === 'A') {
             handlerMenu();
         }
     });

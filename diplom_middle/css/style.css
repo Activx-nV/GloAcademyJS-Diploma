@@ -11,6 +11,51 @@
     left: 20%;
 }
 
+input[type=checkbox] {
+    display: block;
+}
+
+#card_order p.personal-data input[type=checkbox] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 18%;
+    bottom: 0.5%;
+}
+
+#form1 p.personal-data input[type="checkbox"] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 75%;
+    bottom: 40%;
+}
+
+#banner-form p.personal-data input[type="checkbox"] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 41%;
+    bottom: 40%;
+}
+
+#card_order-mozaika p.personal-data input[type="checkbox"] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+
+#card_order-schelkovo p.personal-data input[type="checkbox"] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+
+
 body ul {
     list-style: none;
     padding: 0;
@@ -437,13 +482,13 @@ html#schelkovo #cards .right {
     text-transform: uppercase;
 }
 
-#card_order-mozaika p.personal-data input[type="checkbox"] {
+/* #card_order-mozaika p.personal-data input[type="checkbox"] {
     display: none;
 }
 
 #card_order-schelkovo p.personal-data input[type="checkbox"] {
     display: none;
-}
+} */
 
 #card_order-mozaika input {
     width: 100%;
@@ -463,10 +508,6 @@ html#schelkovo #cards .right {
     background-color: #fff;
     padding-left: 25px;
     margin-bottom: 12px;
-}
-
-p.personal-data input[type="checkbox"] {
-    display: none;
 }
 
 #card_order-mozaika p.personal-data {
@@ -534,6 +575,7 @@ p.personal-data input[type="checkbox"] {
         left: 90%;
     }
 }
+
 @media(max-width: 1024px) {
     .arrows-services-left {
         left: 4%;
@@ -604,10 +646,12 @@ p.personal-data input[type="checkbox"] {
     .slider-dots {
         display: none;
     }
+
     .arrows-services-left {
         top: 16.5em;
         left: 5%;
     }
+
     .arrows-services-right {
         top: 14em;
         left: 95%;
@@ -690,11 +734,13 @@ p.personal-data input[type="checkbox"] {
         width: 27px;
         height: 27px;
     }
+
     .arrows-services-right img {
         color: black;
         width: 10px;
         height: 20px;
     }
+
     .arrows-services-left img {
         color: black;
         width: 10px;
@@ -805,6 +851,7 @@ p.personal-data input[type="checkbox"] {
     .slider-dots {
         display: none;
     }
+
     .arrows-services-right {
         left: 90%;
     }
