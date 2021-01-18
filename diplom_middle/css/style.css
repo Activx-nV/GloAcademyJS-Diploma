@@ -82,7 +82,7 @@ body ul {
     align-items: center;
     justify-content: center;
     top: 13.5em;
-    left: 89%;
+    left: 87.5%;
 }
 
 .arrows-gallery-right img {
@@ -179,6 +179,11 @@ body ul {
     transform: scale(1.2);
 }
 
+.carousel-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 #arrow-left-gallery {
     background-color: yellow;
 }
@@ -193,6 +198,52 @@ body ul {
 
 #arrow-right-gallery:hover {
     cursor: pointer;
+}
+
+
+.arrows-services-left {
+    z-index: 99;
+    background-color: yellow;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    top: 14.5em;
+    left: 2.5%;
+    cursor: pointer;
+}
+
+.arrows-services-right {
+    z-index: 99;
+    background-color: yellow;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    top: 12em;
+    cursor: pointer;
+    left: 97.5%;
+}
+
+
+.arrows-services-left img {
+    color: black;
+    width: 12px;
+    height: 22px;
+}
+
+.arrows-services-right img {
+    color: black;
+    width: 12px;
+    height: 22px;
 }
 
 html#mozaika #cards #card_order-mozaika .cards-types,
@@ -459,7 +510,7 @@ p.personal-data input[type="checkbox"] {
         left: 14%;
     }
 
-    
+
 }
 
 @media(max-width: 1200px) {
@@ -481,6 +532,11 @@ p.personal-data input[type="checkbox"] {
         border-radius: 100%;
         cursor: pointer;
         left: 90%;
+    }
+}
+@media(max-width: 1024px) {
+    .arrows-services-left {
+        left: 4%;
     }
 }
 
@@ -507,6 +563,7 @@ p.personal-data input[type="checkbox"] {
         left: 95%;
         cursor: pointer;
     }
+
     .portfolio-dots {
         position: relative;
         top: -3em;
@@ -546,6 +603,14 @@ p.personal-data input[type="checkbox"] {
 @media(max-width: 769px) {
     .slider-dots {
         display: none;
+    }
+    .arrows-services-left {
+        top: 16.5em;
+        left: 5%;
+    }
+    .arrows-services-right {
+        top: 14em;
+        left: 95%;
     }
 
     .arrows-gallery-left {
@@ -610,6 +675,30 @@ p.personal-data input[type="checkbox"] {
 @media(max-width: 414px) {
     .slider-dots {
         display: none;
+    }
+
+    .arrows-services-left {
+        top: 16em;
+        left: 5%;
+        width: 27px;
+        height: 27px;
+    }
+
+    .arrows-services-right {
+        top: 13.5em;
+        left: 92%;
+        width: 27px;
+        height: 27px;
+    }
+    .arrows-services-right img {
+        color: black;
+        width: 10px;
+        height: 20px;
+    }
+    .arrows-services-left img {
+        color: black;
+        width: 10px;
+        height: 20px;
     }
 
     .arrows-gallery-left {
@@ -715,6 +804,9 @@ p.personal-data input[type="checkbox"] {
 @media(max-width: 320px) {
     .slider-dots {
         display: none;
+    }
+    .arrows-services-right {
+        left: 90%;
     }
 
     .arrows-gallery-left {

@@ -21,7 +21,7 @@ formValidator();
 
 slider();
 
-sliderCarousel();
+sliderCarousel.init();
 
 sliderPhotos();
 
