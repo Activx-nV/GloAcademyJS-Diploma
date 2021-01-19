@@ -28,13 +28,15 @@ const schelkovoCardForm = () => {
                 if (response.status !== 200) {
                     throw new Error('Status error, something went wrong.');
                 }
-                allPageInputs.forEach(item => {
-                    item.value = '';
-                });
                 event.target[9].textContent = 'Забронировать карту';
                 schelkovoWarningMessage.textContent = 'Заявка отправлена';
                 popUpThanks.style.display = 'block';
                 setTimeout(() => {
+                    allPageInputs.forEach(item => {
+                        if (item.classList.contains('text-input') || item.classList.contains('num-input')) {
+                            item.value = '';
+                        }
+                    });
                     popUpThanks.style.display = 'none';
                 }, 3000);
                 setTimeout(() => {
@@ -44,6 +46,11 @@ const schelkovoCardForm = () => {
                     elem.checked = false;
                 });
                 popUpThanks.addEventListener('click', event => {
+                    allPageInputs.forEach(item => {
+                        if (item.classList.contains('text-input') || item.classList.contains('num-input')) {
+                            item.value = '';
+                        }
+                    });
                     const target = event.target;
                     if (target.classList.contains('close_icon')) {
                         popUpThanks.style.display = 'none';

@@ -133,6 +133,12 @@ const sendForm = () => {
                 }
                 popUpThanks.style.display = 'block';
                 setTimeout(() => {
+                    form.removeEventListener('submit', event, true);
+                    allPageInputs.forEach(item => {
+                        if (item.classList.contains('text-input') || item.classList.contains('num-input')) {
+                            item.value = '';
+                        }
+                    });
                     popUpThanks.style.display = 'none';
                 }, 3000);
                 checkbox.forEach(elem => {
@@ -140,7 +146,9 @@ const sendForm = () => {
                 });
                 popUpThanks.addEventListener('click', event => {
                     allPageInputs.forEach(item => {
-                        item.value = '';
+                        if (item.classList.contains('text-input') || item.classList.contains('num-input')) {
+                            item.value = '';
+                        }
                     });
                     const target = event.target;
                     if (target.classList.contains('close_icon')) {

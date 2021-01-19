@@ -8,6 +8,7 @@ const togglePopUp = () => {
         promoPopUp = document.getElementById('gift');
     const formInputs = document.querySelectorAll('.input-text input');
     const checkbox = document.querySelectorAll('.checkbox');
+    let allPageInputs = document.querySelectorAll('input');
 
     //fadeIn
     function fadeIn(speed, domStr) {
@@ -50,6 +51,11 @@ const togglePopUp = () => {
     //popUpON
     popupBtn.forEach(elem => {
         elem.addEventListener('click', () => {
+            allPageInputs.forEach(item => {
+                if (item.classList.contains('text-input') || item.classList.contains('num-input')) {
+                    item.value = '';
+                }
+            });
             if (document.documentElement.clientWidth >= 768) {
                 opacityIn = 0;
                 popUp.style.display = 'block';
