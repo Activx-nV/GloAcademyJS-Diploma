@@ -87,12 +87,7 @@ const mozaikaCardForm = () => {
     }
     if (document.location.pathname === '/mozaika.html') {
         const formCardMozaika = document.querySelector('#card_order-mozaika'),
-            mozaikaCheckBox = document.querySelector('.mozaika-checkbox'),
-            month1 = document.querySelector('#t1'),
-            month6 = document.querySelector('#t2'),
-            month9 = document.querySelector('#t3'),
-            month12 = document.querySelector('#t4'),
-            monthDaily = document.querySelector('#t5');
+            mozaikaCheckBox = document.querySelector('.mozaika-checkbox');
         let mozaikaWarningMessage = document.querySelector('.mozaika-warning');
 
         formCardMozaika.addEventListener('click', event => {

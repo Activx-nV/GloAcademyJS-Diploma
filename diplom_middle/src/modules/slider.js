@@ -1,8 +1,6 @@
 //MAIN SCREEN AUTOPLAY SLIDER
 const slider = () => {
     const slide = document.querySelectorAll('.main-slider .slide');
-    // const slider = document.querySelector('.portfolio-content'),
-    // dotParent = document.querySelector('.portfolio-dots');
 
     let currentSlide = 0,
         interval;
@@ -17,13 +15,11 @@ const slider = () => {
 
     const autoPlaySlide = () => {
         prevSlide(slide, currentSlide);
-        //prevSlide(dot, currentSlide, 'dot-active');
         currentSlide++;
         if (currentSlide >= slide.length) {
             currentSlide = 0;
         }
         nextSlide(slide, currentSlide);
-        //nextSlide(dot, currentSlide, 'dot-active');
     };
 
     const startSlide = (time = 3000) => {

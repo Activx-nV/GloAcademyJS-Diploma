@@ -16,12 +16,8 @@ const sendForm = () => {
         month9 = document.querySelector('#m3'),
         month12 = document.querySelector('#m4');
 
-
-    const checkboxAddressSchelkovo = document.querySelector('#card_leto_schelkovo');
-    const checkboxAddressMozaika = document.querySelector('#card_leto_mozaika');
     let warningCardMessage = document.querySelector('.card-order-warning');
 
-    const cardOrderBtn = document.querySelector('.card-order-btn');
     const footerForm = document.querySelector('#footer_form');
     const checkbox = document.querySelectorAll('.checkbox');
     const checkbox1 = document.querySelector('#check1');
@@ -35,7 +31,6 @@ const sendForm = () => {
     const allPageInputs = document.querySelectorAll('input');
     const formContent = document.querySelector('.form-content');
     const formBtn = document.querySelector('.btn-send');
-    const bannerBtn = document.querySelector('.btn');
     const warningMessage = document.querySelector('.warning');
     statusMessage.style.cssText = 'font-size: 2rem;';
     const formCard = document.getElementById('card_order');
@@ -50,7 +45,6 @@ const sendForm = () => {
         } else if (event.target.className === "btn btn-send") {
             formBtn.style.fontSize = "11px";
             warningCallbackMessage.textContent = 'подтвердите согласие';
-            //formBtn.innerText = 'подтвердите согласие';
             return;
         }
     });
@@ -59,7 +53,8 @@ const sendForm = () => {
         formCard.addEventListener('click', event => {
             if (checkboxCardOrder.checked) {
                 warningCardMessage.textContent = '';
-            } else if (!checkboxCardOrder.checked && event.target.className === "btn card-order-btn") {
+            }
+            if (!checkboxCardOrder.checked && event.target.className === "btn card-order-btn") {
                 warningCardMessage.textContent = 'подтвердите обработку персональных данных';
                 if (event.target.className === 'btn card-order-btn' && month1.checked || month6.checked || month9.checked || month12.checked) {
                     formHandler(formCard);
@@ -78,7 +73,7 @@ const sendForm = () => {
         }
     });
 
-    footerForm.addEventListener('click', event => {
+    footerForm.addEventListener('click', () => {
         const footerCheckBoxMozaika = document.querySelector('#footer_leto_mozaika');
         const footerCheckBoxSchelkovo = document.querySelector('#footer_leto_schelkovo');
         const footerSendBtn = document.querySelector('.popup-btn-footer');
@@ -117,9 +112,6 @@ const sendForm = () => {
                 if (response.status !== 200) {
                     throw new Error('Status error, something went wrong.');
                 }
-                // allPageInputs.forEach(item => {
-                //     item.value = '';
-                // });
                 popUp.style.display = 'none';
                 if (event.target === bannerForm) {
                     event.target.children[3].innerText = 'Записаться';
@@ -197,16 +189,10 @@ const sendForm = () => {
                         event.target.lastElementChild.textContent = `Записаться`;
                     }, 2500);
                 }
-
                 console.error(error);
             });
         });
     }
-
-    // formHandler(form1);
-    // formHandler(form2);
-    // formHandler(bannerForm);
-
 };
 
 export default sendForm;

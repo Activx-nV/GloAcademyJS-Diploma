@@ -86,12 +86,8 @@ const schelkovoCardForm = () => {
     }
     if (document.location.pathname === '/schelkovo.html') {
         const formCardSchelkovo = document.querySelector('#card_order-schelkovo'),
-            schelkovoCheckBox = document.querySelector('.schelkovo-checkbox'),
-            month1 = document.querySelector('#t1'),
-            month6 = document.querySelector('#t2'),
-            month9 = document.querySelector('#t3'),
-            month12 = document.querySelector('#t4'),
-            monthDaily = document.querySelector('#t5');
+            schelkovoCheckBox = document.querySelector('.schelkovo-checkbox');
+
         let schelkovoWarningMessage = document.querySelector('.schelkovo-warning');
 
         formCardSchelkovo.addEventListener('click', event => {

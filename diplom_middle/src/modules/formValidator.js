@@ -1,8 +1,6 @@
 const formValidator = () => {
     const formTextInput = document.querySelectorAll('.text-input');
     const formNumberInput = document.querySelectorAll('.num-input');
-    //const expandedFormName = document.querySelector('.top-form');
-    //const expandedFormMessage = document.querySelector('.mess');
     const formBtns = document.querySelectorAll('.btn-send');
     formTextInput.forEach(item => {
         item.setAttribute('autocomplete', 'off');
@@ -43,11 +41,6 @@ const formValidator = () => {
     const validateStringInput = dom => {
         dom.forEach(item => {
             item.addEventListener('input', () => {
-
-                // if (!item.value[item.value.length - 1].match(/^[а-яА-Я ]/)) {
-                //     item.value = item.value.substr(0, item.value.length - 1);
-                // }
-
                 item.value = item.value.replace(/^([^А-Яа-яЁё ])$/g, "");
                 if (item.value.length === 50) {
                     item.value = item.value.substr(0, item.value.length - 1);

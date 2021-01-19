@@ -107,53 +107,53 @@ class SliderCarousel {
         if (document.documentElement.clientWidth > 1024) {
             ArrowLeft.style.left = '0%';
             switch (this.options.position) {
-                case 0:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '97.5%';
-                    break;
-                case 1:
-                    ArrowRight.style.left = '95.5%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '96%';
-                    break;
-                case 3:
-                    ArrowRight.style.left = '96.5%';
-                    break;
-                case 4:
-                    ArrowRight.style.left = '97%';
-                    break;
-                case 5:
-                    ArrowRight.style.left = '97.5%';
-                    break;
+            case 0:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '97.5%';
+                break;
+            case 1:
+                ArrowRight.style.left = '95.5%';
+                break;
+            case 2:
+                ArrowRight.style.left = '96%';
+                break;
+            case 3:
+                ArrowRight.style.left = '96.5%';
+                break;
+            case 4:
+                ArrowRight.style.left = '97%';
+                break;
+            case 5:
+                ArrowRight.style.left = '97.5%';
+                break;
             }
         } else if (document.documentElement.clientWidth < 1024 && document.documentElement.clientWidth > 768) {
             ArrowRight.style.left = '96%';
             switch (this.options.position) {
-                case 0:
-                    ArrowLeft.style.left = '2%';
-                    ArrowRight.style.left = '96%';
-                    break;
-                case 1:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '93.5%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '94%';
-                    ArrowLeft.style.left = '0.5%';
-                    break;
-                case 3:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '94.5%';
-                    break;
-                case 4:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '95%';
-                    break;
-                case 5:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '95%';
-                    break;
+            case 0:
+                ArrowLeft.style.left = '2%';
+                ArrowRight.style.left = '96%';
+                break;
+            case 1:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '93.5%';
+                break;
+            case 2:
+                ArrowRight.style.left = '94%';
+                ArrowLeft.style.left = '0.5%';
+                break;
+            case 3:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '94.5%';
+                break;
+            case 4:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '95%';
+                break;
+            case 5:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '95%';
+                break;
             }
         } else if (document.documentElement.clientWidth <= 768 && document.documentElement.clientWidth < 1024) {
             ArrowLeft.style.left = '2%';
@@ -161,30 +161,30 @@ class SliderCarousel {
             ArrowRight.style.top = '14em';
             ArrowRight.style.left = '92%';
             switch (this.options.position) {
-                case 0:
-                    ArrowLeft.style.left = '2%';
-                    ArrowRight.style.left = '92.5%';
-                    break;
-                case 1:
-                    //ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '91%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '91%';
-                    //ArrowLeft.style.left = '0.5%';
-                    break;
-                case 3:
-                    //ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '91.5%';
-                    break;
-                case 4:
-                    //ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '91.5%';
-                    break;
-                case 5:
-                    //ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '92%';
-                    break;
+            case 0:
+                ArrowLeft.style.left = '2%';
+                ArrowRight.style.left = '92.5%';
+                break;
+            case 1:
+                //ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '91%';
+                break;
+            case 2:
+                ArrowRight.style.left = '91%';
+                //ArrowLeft.style.left = '0.5%';
+                break;
+            case 3:
+                //ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '91.5%';
+                break;
+            case 4:
+                //ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '91.5%';
+                break;
+            case 5:
+                //ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '92%';
+                break;
             }
         } else if (document.documentElement.clientWidth <= 576 && document.documentElement.clientWidth < 786) {
             ArrowLeft.style.left = '2%';
@@ -205,52 +205,52 @@ class SliderCarousel {
         if (document.documentElement.clientWidth > 1024) {
             ArrowLeft.style.left = '0%';
             switch (this.options.position) {
-                case 0:
-                    ArrowRight.style.left = '96%';
-                    break;
-                case 1:
-                    ArrowRight.style.left = '96.5%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '97%';
-                    break;
-                case 3:
-                    ArrowRight.style.left = '97.5%';
-                    break;
-                case 4:
-                    ArrowRight.style.left = '95.5%';
-                    break;
-                case 5:
-                    ArrowRight.style.left = '95.5%';
-                    break;
+            case 0:
+                ArrowRight.style.left = '96%';
+                break;
+            case 1:
+                ArrowRight.style.left = '96.5%';
+                break;
+            case 2:
+                ArrowRight.style.left = '97%';
+                break;
+            case 3:
+                ArrowRight.style.left = '97.5%';
+                break;
+            case 4:
+                ArrowRight.style.left = '95.5%';
+                break;
+            case 5:
+                ArrowRight.style.left = '95.5%';
+                break;
             }
         } else if (document.documentElement.clientWidth < 1024 && document.documentElement.clientWidth > 768) {
             ArrowRight.style.left = '96%';
             switch (this.options.position) {
-                case 0:
-                    ArrowLeft.style.left = '2%';
-                    ArrowRight.style.left = '93.5%';
-                    break;
-                case 1:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '94.5%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '94.5%';
-                    ArrowLeft.style.left = '0.5%';
-                    break;
-                case 3:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '95%';
-                    break;
-                case 4:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '95.5%';
-                    break;
-                case 5:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '93.5%';
-                    break;
+            case 0:
+                ArrowLeft.style.left = '2%';
+                ArrowRight.style.left = '93.5%';
+                break;
+            case 1:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '94.5%';
+                break;
+            case 2:
+                ArrowRight.style.left = '94.5%';
+                ArrowLeft.style.left = '0.5%';
+                break;
+            case 3:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '95%';
+                break;
+            case 4:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '95.5%';
+                break;
+            case 5:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '93.5%';
+                break;
             }
         } else if (document.documentElement.clientWidth <= 768 && document.documentElement.clientWidth < 1024) {
             ArrowLeft.style.left = '2%';
@@ -258,30 +258,30 @@ class SliderCarousel {
             ArrowRight.style.top = '14em';
             ArrowRight.style.left = '92%';
             switch (this.options.position) {
-                case 0:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '91%';
-                    break;
-                case 1:
-                    ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '91%';
-                    break;
-                case 2:
-                    ArrowRight.style.left = '91%';
-                    //ArrowLeft.style.left = '0.5%';
-                    break;
-                case 3:
-                    ArrowLeft.style.left = '1.5%';
-                    ArrowRight.style.left = '91.5%';
-                    break;
-                case 4:
-                    //ArrowLeft.style.left = '1%';
-                    ArrowRight.style.left = '91.5%';
-                    break;
-                case 5:
-                    ArrowLeft.style.left = '0.5%';
-                    ArrowRight.style.left = '90.5%';
-                    break;
+            case 0:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '91%';
+                break;
+            case 1:
+                ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '91%';
+                break;
+            case 2:
+                ArrowRight.style.left = '91%';
+                //ArrowLeft.style.left = '0.5%';
+                break;
+            case 3:
+                ArrowLeft.style.left = '1.5%';
+                ArrowRight.style.left = '91.5%';
+                break;
+            case 4:
+                //ArrowLeft.style.left = '1%';
+                ArrowRight.style.left = '91.5%';
+                break;
+            case 5:
+                ArrowLeft.style.left = '0.5%';
+                ArrowRight.style.left = '90.5%';
+                break;
             }
         } else if (document.documentElement.clientWidth <= 576 && document.documentElement.clientWidth < 786) {
             ArrowLeft.style.left = '2%';
@@ -293,37 +293,6 @@ class SliderCarousel {
             ArrowRight.style.left = '90%';
         }
     }
-    // addArrow() {
-    //     this.next = document.createElement('button');
-    //     this.prev = document.createElement('button');
-    //     this.next.className = 'glo-slider__next';
-    //     this.prev.className = 'glo-slider__prev';
-    //     this.main.appendChild(this.prev);
-    //     this.main.appendChild(this.next);
-    //     const style = document.createElement('style');
-    //     style.textContent = `
-    // 		.glo-slider__next,
-    // 		.glo-slider__prev{
-    // 			margin: 0 10px;
-    // 			border: 20px solid transparent;
-    // 			background: transparent;
-    // 		}
-    // 		.glo-slider__next{
-    // 			border-left-color: #19bbff;
-    // 		}
-    // 		.glo-slider__prev{
-    // 			border-right-color: #19bbff;
-    // 		}
-    // 		.glo-slider__prev:hover,
-    // 		.glo-slider__next:hover,
-    // 		.glo-slider__prev:focus,
-    // 		.glo-slider__next:focus{
-    // 			background: transparent;
-    // 			outline: transparent;
-    // 		}
-    // 		`;
-    //     document.head.appendChild(style);
-    // }
     responseInit() {
         const slidesToShowDefault = this.slidesToShow;
         const allResponse = this.responsive.map(item => item.breakpoint);
@@ -369,25 +338,25 @@ const sliderСarousel = new SliderCarousel({
     slidesToShow: 5,
     infinity: true,
     responsive: [{
-            breakpoint: 1024,
-            slidesToShow: 4
-        },
-        {
-            breakpoint: 768,
-            slidesToShow: 3
-        },
-        {
-            breakpoint: 576,
-            slidesToShow: 3
-        },
-        {
-            breakpoint: 414,
-            slidesToShow: 2
-        },
-        {
-            breakpoint: 325,
-            slidesToShow: 1
-        }
+        breakpoint: 1024,
+        slidesToShow: 4
+    },
+    {
+        breakpoint: 768,
+        slidesToShow: 3
+    },
+    {
+        breakpoint: 576,
+        slidesToShow: 3
+    },
+    {
+        breakpoint: 414,
+        slidesToShow: 2
+    },
+    {
+        breakpoint: 325,
+        slidesToShow: 1
+    }
     ]
 });
 

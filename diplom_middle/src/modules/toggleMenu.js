@@ -8,7 +8,7 @@ const toggleMenu = () => {
         //const target = event.target.tagName;
         if (menu.style.display !== 'block') {
             let flyInterval;
-            const flyAnimate = function () {
+            const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count += 0.02;
                 menu.style.opacity = count;
@@ -22,7 +22,7 @@ const toggleMenu = () => {
             menuSelector.textContent = 'Закрыть меню';
         } else if (menu.style.display === 'block' && event.target.tagName === 'A' || event.target.tagName === 'P') {
             let flyInterval;
-            const flyAnimate = function () {
+            const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count -= 0.02;
                 menu.style.opacity = count;
@@ -43,7 +43,7 @@ const toggleMenu = () => {
         let target = event.target.tagName;
         if (menu.style.display === 'block' && target !== 'A' && event.target !== clubsList && target !== 'LI' && target !== 'UL') {
             let flyInterval;
-            const flyAnimate = function () {
+            const flyAnimate = function() {
                 flyInterval = requestAnimationFrame(flyAnimate);
                 count -= 0.02;
                 menu.style.opacity = count;
