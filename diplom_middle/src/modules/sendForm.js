@@ -96,6 +96,7 @@ const sendForm = () => {
     function formHandler(form) {
         form.addEventListener('submit', event => {
             event.preventDefault();
+            event.stopImmediatePropagation();
             statusMessage.textContent = loadMessage;
             if (event.target === bannerForm) {
                 event.target.children[3].innerText = loadMessage;

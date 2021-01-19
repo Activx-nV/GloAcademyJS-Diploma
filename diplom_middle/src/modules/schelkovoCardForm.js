@@ -17,6 +17,7 @@ const schelkovoCardForm = () => {
             const loadMessage = 'Загрузка...';
             const checkbox = document.querySelectorAll('.checkbox');
             event.preventDefault();
+            event.stopImmediatePropagation();
             event.target[9].textContent = loadMessage;
 
             const formData = new FormData(form);

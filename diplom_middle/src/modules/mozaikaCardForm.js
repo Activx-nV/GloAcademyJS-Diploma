@@ -17,6 +17,7 @@ const mozaikaCardForm = () => {
             const loadMessage = 'Загрузка...';
             const checkbox = document.querySelectorAll('.checkbox');
             event.preventDefault();
+            event.stopImmediatePropagation();
             mozaikaWarningMessage.textContent = loadMessage;
 
             const formData = new FormData(form);
